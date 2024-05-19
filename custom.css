@@ -1,7 +1,12 @@
 body {
     background-color: rgb(7, 10, 38);
 }
-
+.text-blue {
+    color: rgb(7, 10, 38);
+}
+.bg-blue {
+    background-color: rgb(7, 10, 38);
+}
 footer {
     margin-top: 200px;
     box-shadow: 0 0 10px #fff,
