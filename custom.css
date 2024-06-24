@@ -57,3 +57,12 @@ footer {
     transition: calc(0.7s);
     filter: drop-shadow(1px 7px 20px #ffffff);
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* background: rgb(255, 0, 0); */
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
