@@ -1,0 +1,16 @@
+# Ẩn tất cả các file trong thư mục assets/admin
+/assets/admin/*
+/assets/file/*
+
+# Không ẩn các thư mục css, images, và js
+!/assets/admin/vendor/
+!/assets/admin/css/
+!/assets/admin/js/
+!/assets/file/system/
+
+# Không ẩn các file trong các thư mục trên
+!/assets/admin/css/**
+!/assets/admin/js/**
+
+config.php
+rule.txt

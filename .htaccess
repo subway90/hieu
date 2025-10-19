@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# Chặn truy cập vào các tệp
+RewriteRule ^autoload\.php$ - [F,L]
+RewriteRule ^config\.php$ - [F,L]
+RewriteRule ^example.config\.php$ - [F,L]
+
+# Chặn truy cập vào các thư mục
+RewriteCond %{REQUEST_URI} ^/(controllers|models|views|phpmailer|stringee)/ [NC]
+RewriteRule ^ - [F,L]
+
+# Đảm bảo rằng các tệp và thư mục tồn tại sẽ không bị chuyển hướng
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Chuyển đến trang mặc định
+DirectoryIndex index.php
+
+# Luật chuyển đổi
+RewriteRule ^(.+)$ /index.php?act=$1 [QSA,L]
+
+# Hiển thị thông báo lỗi
+ErrorDocument 400 /page_error/400.php
+ErrorDocument 401 /page_error/401.php
+ErrorDocument 403 /page_error/403.php
+ErrorDocument 404 /page_error/404.php
+ErrorDocument 500 /page_error/500.php
