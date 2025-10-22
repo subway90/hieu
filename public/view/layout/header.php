@@ -8,8 +8,10 @@
     <meta name="keywords" content="<?= WEB_KEYWORD ?>">
     <title><?= $title ? WEB_NAME.' | '.$title : '' ?></title>
     <link rel="icon" href="<?= URL_A ?>image/minhhieu_logo.png" type="image/png">
+    <?php if(BOOL_CHATIVE): ?>
     <!-- Chative -->
     <script src="https://messenger.svc.chative.io/static/v1.0/channels/s3ac3bbe7-7c9a-44d6-ab70-cffe6b2a1375/messenger.js?mode=livechat" defer="defer"></script>
+    <?php endif ?>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -20,15 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="<?= URL_P_V ?>css/custom.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CJ9SS0N1X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-0CJ9SS0N1X');
-    </script>
 </head>
 
 <!-- header -->
