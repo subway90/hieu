@@ -59,9 +59,7 @@
         </div>
     </div>
     <div class="box-radio">
-        <audio class="" id="myAudio" controls autoplay>
-            <source src="<?=URL_A?>/audio/like_im_gonna_lose_u.mp3" type="audio/mpeg">
-        </audio>
+        <audio id="myAudio" src="<?=URL_A?>audio/like_im_gonna_lose_u.mp3" controls loop></audio>
     </div>
     <a href="/">
         Tải lại trang
