@@ -5,16 +5,6 @@
 # Ẩn thư mục asset
 /asset/*
 
-# Không ẩn các thư mục css, images, và js
-!/assets/admin/vendor/
-!/assets/admin/css/
-!/assets/admin/js/
-!/assets/file/system/
-
-# Không ẩn các file trong các thư mục trên
-!/assets/admin/css/**
-!/assets/admin/js/**
-
 config.php
 rule.txt
 public/controller/deploy-src.php
