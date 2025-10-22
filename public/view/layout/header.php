@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= WEB_DESCRIPTION ?>">
-    <title><?= WEB_NAME . ' | ' . ($title) ? $title : '' ?></title>
+    <meta name="keywords" content="<?= WEB_KEYWORD ?>">
+    <title><?= $title ? WEB_NAME.' | '.$title : '' ?></title>
     <link rel="icon" href="<?= URL_A ?>image/minhhieu_logo.png" type="image/png">
     <!-- Chative -->
     <script src="https://messenger.svc.chative.io/static/v1.0/channels/s3ac3bbe7-7c9a-44d6-ab70-cffe6b2a1375/messenger.js?mode=livechat" defer="defer"></script>
