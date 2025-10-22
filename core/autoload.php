@@ -11,10 +11,3 @@ if(!isset($_SESSION['voucher'])) $_SESSION['voucher'] = [];
 if(!isset($_SESSION['toast'])) $_SESSION['toast'] = [];
 if(!isset($_SESSION['checkout'])) $_SESSION['checkout'] = [];
 if(!isset($_SESSION['canvas'])) $_SESSION['canvas'] = '';
-
-// config
-require_once 'config.php';
-
-// models
-require_once 'models/database.php';
-require_once 'models/function.php';

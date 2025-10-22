@@ -2,6 +2,9 @@
 /assets/admin/*
 /assets/file/*
 
+# Ẩn thư mục asset
+/asset/*
+
 # Không ẩn các thư mục css, images, và js
 !/assets/admin/vendor/
 !/assets/admin/css/
