@@ -21,14 +21,15 @@
     <!-- Ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/custom.css">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css">
 </head>
 
 <!-- header -->
 <header class="py-lg-2 py-3 px-lg-4 container">
     <div class="d-flex justify-content-between align-items-center">
-        <div class="col-lg-2 col-12 d-flex align-items-center justify-content-center justify-content-lg-start">
-            <img class="w-25" src="<?= WEB_LOGO ?>" alt="logo">
+        <div class="col-lg-2 col-12 d-flex align-items-center justify-content-center justify-content-lg-start gap-2">
+            <img id="logo-header" src="<?= WEB_LOGO ?>" alt="logo">
             <div class="ms-2">
                 <span class="g-h1 fs-6">hieu.name.vn</span>
                 <div class="text-light small">Trang website cá nhân</div>
