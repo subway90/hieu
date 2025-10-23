@@ -29,6 +29,7 @@ function pdo_get_connection()
  */
 function pdo_execute($sql, ...$args)
 {
+    if(!DB_BOOL) die(_s_me_error.'Database chưa được bật'._e_me_error);
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
@@ -47,6 +48,7 @@ function pdo_execute($sql, ...$args)
  */
 function pdo_query($sql)
 {
+    if(!DB_BOOL) return ['Database chưa được bật'];
     $sql_args = array_slice(func_get_args(), 1);
     try {
         $conn = pdo_get_connection();
@@ -67,6 +69,7 @@ function pdo_query($sql)
  */
 function pdo_query_one($sql)
 {
+    if(!DB_BOOL) return ['Database chưa được bật'];
     $sql_args = array_slice(func_get_args(), 1);
     try {
         $conn = pdo_get_connection();
@@ -87,6 +90,7 @@ function pdo_query_one($sql)
  */
 function pdo_query_value($sql)
 {
+    if(!DB_BOOL) return 'Database chưa được bật';
     $sql_args = array_slice(func_get_args(), 1);
     try {
         $conn = pdo_get_connection();
