@@ -43,10 +43,13 @@
 
             </div>
         </div>
-        <span class="g-h1">&copy; Bản quyền thuộc <a target="_blank"
-                href="https://github.com/subway90/hieu"><strong>SUBWAY90</strong></a></span>
+        <span class="g-h1 small">&copy; Bản quyền thuộc <a target="_blank" href="https://github.com/subway90/hieu"><strong>SUBWAY90</strong></a></span>
     </div>
 </footer>
+
+<div class="position-fixed end-0 bottom-0 mb-5 me-lg-4">
+        <button class="btn btn-lg g-h1" id="scrollButton"><i class="fs-1 bi bi-arrow-up-circle-fill"></i></button>
+</div>
 
 </body>
 

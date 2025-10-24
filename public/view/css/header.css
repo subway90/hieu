@@ -1,20 +1,16 @@
 #logo-header {
-    width: 25%;
+    width: 42px;
 }
 
 @media (max-width: 992px) {
     #logo-header {
-        width: 15%;
+        width: 28px;
     }
 }
 
-header, nav {
-    background-color: var(--bs-primary-bold);
-}
-
-nav {
-    box-shadow: 0 8px 8px var(--bs-shadow-header);
-}
+/* nav {
+    box-shadow: 0 12px 12px var(--bs-shadow-header);
+} */
 
 .nav-link {
     color: var(--bs-light-50);
