@@ -25,19 +25,19 @@
 
                 <div class="col-lg-4 col-12 d-flex justify-content-center justify-content-lg-end my-3 my-lg-0">
                     <a href="https://github.com/subway90" target="_blank">
-                        <i class="fab fa-github-square fs-3 g-h1 px-1"></i>
+                        <i class="bi bi-github fs-3 g-h1 px-1"></i>
                     </a>
-                    <a href="https://fb.com/hieu.nam.vn/" target="_blank">
-                        <i class="fab fa-facebook-square fs-3 g-h1 px-1"></i>
-                    </a>
-                    <a href="https://instagram.com/hieu.name.vn" target="_blank">
-                        <i class="fab fa-instagram-square fs-3 g-h1 px-1"></i>
+                    <a href="https://fb.com/hieu.name.vn/" target="_blank">
+                        <i class="bi bi-facebook fs-3 g-h1 px-1"></i>
                     </a>
                     <a href="https://youtube.com/@subway90" target="_blank">
-                        <i class="fab fa-youtube-square fs-3 g-h1 px-1"></i>
+                        <i class="bi bi-youtube fs-3 g-h1 px-1"></i>
+                    </a>
+                    <a href="https://instagram.com/hieu.name.vn" target="_blank">
+                        <i class="bi bi-instagram fs-3 g-h1 px-1"></i>
                     </a>
                     <a href="https://linkedin.com/in/subway90" target="_blank">
-                        <i class="fab fa-linkedin fs-3 g-h1 px-1"></i>
+                        <i class="bi bi-linkedin fs-3 g-h1 px-1"></i>
                     </a>
                 </div>
 

@@ -20,6 +20,9 @@ body {
     
     --bs-shadow-header : #f4f4f410;
 
+    --bs-g-h1-primary : #00ffff;
+    --bs-g-h1-secondary : #ff00c3;
+
     background-color: var(--bs-primary);
 }
 
@@ -39,6 +42,9 @@ body.light {
     --bs-neon-4 : #2c2c2e14;
     
     --bs-shadow-header : #2c2c2e2e;
+
+    --bs-g-h1-primary : #5100ff;
+    --bs-g-h1-secondary : #ff00ee;
 }
 
 .btn-outline-light {
@@ -64,7 +70,7 @@ body.light {
 }
 
 .g-h1 {
-    background: linear-gradient(90deg, #00ffff, #ff00c3);
+    background: linear-gradient(90deg,var(--bs-g-h1-primary), var(--bs-g-h1-secondary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
