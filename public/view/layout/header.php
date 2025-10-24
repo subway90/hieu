@@ -8,21 +8,16 @@
     <meta name="keywords" content="<?= WEB_KEYWORD ?>">
     <title><?= $title ? WEB_NAME.' | '.$title : '' ?></title>
     <link rel="icon" href="<?= URL_A ?>image/minhhieu_logo.png" type="image/png">
-    <?php if(BOOL_CHATIVE): ?>
-    <!-- Chative -->
-    <script src="https://messenger.svc.chative.io/static/v1.0/channels/s3ac3bbe7-7c9a-44d6-ab70-cffe6b2a1375/messenger.js?mode=livechat" defer="defer"></script>
-    <?php endif ?>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- Ajax -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- CSS -->
+    <!-- CDN bootstrap icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <!-- CDN CSS Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- CSS Custom -->
     <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css">
     <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css">
 </head>
 
 <!-- header -->
@@ -53,13 +48,10 @@
                     <a class="nav-link text-light" aria-current="page" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a target="_blank" class="nav-link text-light" href="https://sieuthididong.online">Dự án STDD</a>
+                    <a class="nav-link text-light" aria-current="page" href="/du-an">Dự án</a>
                 </li>
                 <li class="nav-item">
-                    <a target="_blank" class="nav-link text-light" href="https://pms.hieu.name.vn">Dự án PMS</a>
-                </li>
-                <li class="nav-item">
-                    <a target="_blank" class="nav-link text-light" href="https://bongbeobread.site">Dự án BAKERY</a>
+                    <a class="nav-link text-light" aria-current="page" href="/">Sưu tầm</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">

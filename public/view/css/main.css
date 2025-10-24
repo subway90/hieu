@@ -1,4 +1,9 @@
+:root {
+    --bs-light-50 : #ffffff50;
+}
+
 body {
+    min-width: 100vh;
     background-color: rgb(7, 10, 38);
 }
 .text-blue {
@@ -6,44 +11,6 @@ body {
 }
 .bg-blue {
     background-color: rgb(7, 10, 38);
-}
-footer {
-    margin-top: 200px;
-    box-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 40px #ff00de,
-        0 0 70px #ff00de,
-        0 0 80px #ff00de,
-        0 0 100px #ff00de,
-        0 0 150px #ff00de;
-    border: 4px solid #fff;
-    padding: 20px;
-    animation: neon-white-border 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neon-white-border {
-    from {
-        box-shadow: 0 0 5px #fff,
-            0 0 20px #fff,
-            0 0 30px #fff,
-            0 0 40px #ff00de,
-            0 0 70px #ff00de,
-            0 0 80px #ff00de,
-            0 0 100px #ff00de,
-            0 0 150px #ff00de;
-    }
-
-    to {
-        box-shadow: 0 0 2px #fff,
-            0 0 10px #fff,
-            0 0 15px #fff,
-            0 0 20px #ff00de,
-            0 0 35px #ff00de,
-            0 0 40px #ff00de,
-            0 0 50px #ff00de,
-            0 0 75px #ff00de;
-    }
 }
 
 .g-h1 {
@@ -65,4 +32,8 @@ footer {
 ::-webkit-scrollbar-thumb {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
+}
+
+.shadow-light {
+    box-shadow: 0 0 1px 2px var(--bs-light-50);
 }

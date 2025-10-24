@@ -54,5 +54,13 @@
 <script src="<?= URL_P_V ?>js/copy.js"></script>
 <script src="<?= URL_P_V ?>js/scroll.js"></script>
 <script src="<?= URL_P_V ?>js/paragraph.js"></script>
+<!-- CDN JS Bootstrap 5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<!-- CDN JQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- CDN Chative -->
+<?php if(BOOL_CHATIVE): ?>
+    <script src="https://messenger.svc.chative.io/static/v1.0/channels/s3ac3bbe7-7c9a-44d6-ab70-cffe6b2a1375/messenger.js?mode=livechat" defer="defer"></script>
+<?php endif ?>
 
 </html>
