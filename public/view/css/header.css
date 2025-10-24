@@ -7,3 +7,23 @@
         width: 15%;
     }
 }
+
+header, nav {
+    background-color: var(--bs-primary-bold);
+}
+
+nav {
+    box-shadow: 0 8px 8px var(--bs-shadow-header);
+}
+
+.nav-link {
+    color: var(--bs-light-50);
+}
+
+.nav-link:hover {
+    color: var(--bs-light-80);
+}
+
+.nav-link.on {
+    color: var(--bs-light);
+}

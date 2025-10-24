@@ -6,7 +6,7 @@
 
                 <div class="col-lg-4 col-12 d-flex align-items-center">
                     <a class="w-25" href="/">
-                        <img class="w-100" src="/images/minhhieu_logo.png" alt="">
+                        <img class="w-100" src="<?= URL_A ?>image/minhhieu_logo.png" alt="">
                     </a>
                     <div class="g-h1 ms-3 text-start">
                         <div class="small"><i class="fas fa-user-circle"></i> <strong>Nguyễn Minh Hiếu</strong></div>
@@ -51,9 +51,9 @@
 </body>
 
 <!-- JS custom -->
-<script src="<?= URL_P_V ?>js/copy.js"></script>
 <script src="<?= URL_P_V ?>js/scroll.js"></script>
 <script src="<?= URL_P_V ?>js/paragraph.js"></script>
+<script src="<?= URL_P_V ?>js/light_mode.js"></script>
 <!-- CDN JS Bootstrap 5 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <!-- CDN JQuery -->

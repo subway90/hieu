@@ -1,16 +1,66 @@
 :root {
-    --bs-light-50 : #ffffff50;
+
 }
 
 body {
-    min-width: 100vh;
-    background-color: rgb(7, 10, 38);
+    
+    --bs-light : #fefefe;
+    --bs-light-80 : #fefefedc;
+    --bs-light-50 : #fefefe7b;
+
+    --bs-light-shadow : #f3f3f3;
+
+    --bs-primary : #2c2c2e;
+    --bs-primary-bold : #202022;
+    
+    --bs-neon-1 : #f2f2f2;
+    --bs-neon-2 : #ff00de;
+    --bs-neon-3 : #8800ff;
+    --bs-neon-4 : #0800ff;
+    
+    --bs-shadow-header : #f4f4f410;
+
+    background-color: var(--bs-primary);
 }
+
+body.light {
+    --bs-light : #2c2c2e;
+    --bs-light-80 : #2c2c2edc;
+    --bs-light-50 : #2c2c2e7b;
+
+    --bs-light-shadow : #2c2c2e2e;
+
+    --bs-primary : #f4f4f4;
+    --bs-primary-bold : #f3f3f3;
+    
+    --bs-neon-1 : #2c2c2e14;
+    --bs-neon-2 : #2c2c2e14;
+    --bs-neon-3 : #2c2c2e14;
+    --bs-neon-4 : #2c2c2e14;
+    
+    --bs-shadow-header : #2c2c2e2e;
+}
+
+.btn-outline-light {
+    color: var(--bs-light) !important;
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-light) !important;
+}
+
+.btn-outline-light:hover {
+    color: var(--bs-primary) !important;
+    background-color: var(--bs-light) !important;
+}
+
+.text-light {
+    color: var(--bs-light) !important;
+}
+
 .text-blue {
-    color: rgb(7, 10, 38);
+    color: var(--bs-primary);
 }
 .bg-blue {
-    background-color: rgb(7, 10, 38);
+    background-color: var(--bs-primary);
 }
 
 .g-h1 {
@@ -26,12 +76,16 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    /* background: rgb(255, 0, 0); */
+    width: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
+    background-color: var(--bs-light-50);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bs-light-80);
 }
 
 .shadow-light {

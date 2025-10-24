@@ -11,3 +11,6 @@ if(!isset($_SESSION['voucher'])) $_SESSION['voucher'] = [];
 if(!isset($_SESSION['toast'])) $_SESSION['toast'] = [];
 if(!isset($_SESSION['checkout'])) $_SESSION['checkout'] = [];
 if(!isset($_SESSION['canvas'])) $_SESSION['canvas'] = '';
+
+// Khởi tạo cookie
+if(!isset($_COOKIE['mode_light'])) setcookie('mode_light','off',time()+84000*365,'/');

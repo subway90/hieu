@@ -1,39 +1,31 @@
 
 footer {
-    margin-top: 200px;
-    box-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 40px #ff00de,
-        0 0 70px #ff00de,
-        0 0 80px #ff00de,
-        0 0 100px #ff00de,
-        0 0 150px #ff00de;
-    border: 4px solid #fff;
+    background-color: var(--bs-primary-bold);
+    margin-top: 75px;
     padding: 20px;
-    animation: neon-white-border 1.5s ease-in-out infinite alternate;
+    animation: neon-white-border 2s ease-in-out infinite alternate;
 }
 
 @keyframes neon-white-border {
     from {
-        box-shadow: 0 0 5px #fff,
-            0 0 20px #fff,
-            0 0 30px #fff,
-            0 0 40px #ff00de,
-            0 0 70px #ff00de,
-            0 0 80px #ff00de,
-            0 0 100px #ff00de,
-            0 0 150px #ff00de;
+        box-shadow: 0 0 5px var(--bs-neon-1),
+            0 0 10px var(--bs-neon-1),
+            0 0 15px var(--bs-neon-1),
+            0 0 20px var(--bs-neon-2),
+            0 0 35px var(--bs-neon-2),
+            0 0 40px var(--bs-neon-3),
+            0 0 50px var(--bs-neon-3),
+            0 0 75px var(--bs-neon-3);
     }
 
     to {
-        box-shadow: 0 0 2px #fff,
-            0 0 10px #fff,
-            0 0 15px #fff,
-            0 0 20px #ff00de,
-            0 0 35px #ff00de,
-            0 0 40px #ff00de,
-            0 0 50px #ff00de,
-            0 0 75px #ff00de;
+        box-shadow: 0 0 2px var(--bs-neon-1),
+            0 0 5px var(--bs-neon-1),
+            0 0 8px var(--bs-neon-1),
+            0 0 10px var(--bs-neon-2),
+            0 0 15px var(--bs-neon-2),
+            0 0 20px var(--bs-neon-2),
+            0 0 25px var(--bs-neon-2),
+            0 0 30px var(--bs-neon-2);
     }
 }

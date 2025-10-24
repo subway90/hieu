@@ -20,9 +20,11 @@
     <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css">
 </head>
 
+<body class="">
+
 <!-- header -->
-<header class="py-lg-2 py-3 px-lg-4 container">
-    <div class="d-flex justify-content-between align-items-center">
+<header class="py-lg-2 py-3 px-lg-4">
+    <div class="container d-flex justify-content-between align-items-center">
         <div class="col-lg-2 col-12 d-flex align-items-center justify-content-center justify-content-lg-start gap-2">
             <img id="logo-header" src="<?= WEB_LOGO ?>" alt="logo">
             <div class="ms-2">
@@ -30,36 +32,38 @@
                 <div class="text-light small">Trang website cá nhân</div>
             </div>
         </div>
+        <div class="col-lg-10 col-12 d-flex justify-content-end">
+            <button type="button" id="mode-light" class="btn btn-sm btn-outline-light rounded-circle">
+                <i class=""></i>
+            </button>
+        </div>
     </div>
 </header>
 
 <!-- Navbar -->
-<nav
-    class="navbar navbar-expand-lg bg-body-tertiary border-bottom px-0 position-sticky sticky-top bg-blue border-5 border-bottom">
+<nav class="navbar navbar-expand-lg px-0 position-sticky sticky-top">
     <div class="container">
         <button class="navbar-toggler bg-transparent p-0" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
-            <i class="fas fa-bars text-light fs-1"></i>
+            <i class="bi bi-list text-light fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link text-light" aria-current="page" href="/">Trang chủ</a>
+                    <a class="nav-link <?= ($page == 'home') ? 'on' : '' ?> ps-0" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" aria-current="page" href="/du-an">Dự án</a>
+                    <a class="nav-link <?= ($page == 'project') ? 'on' : '' ?>" href="/du-an">Dự án</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" aria-current="page" href="/">Sưu tầm</a>
+                    <a class="nav-link <?= ($page == 'collect') ? 'on' : '' ?>" href="/suu-tam">Sưu tầm</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <div class="input-group">
-                    <input class="form-control bg-transparent" type="search" placeholder="Tìm kiếm thông tin..."
-                        aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
-                </div>
+                <a href="/dang-nhap" class="btn btn-outline-light rounded-pill">
+                    <small>Đăng nhập</small>
+                </a>
             </form>
         </div>
     </div>
