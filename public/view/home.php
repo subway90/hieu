@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="<?= URL_P_V ?>css/home.css">
 
 <div class="container px-lg-0 mt-5">
-    <div class="box-introduce d-flex align-items-center">
+    <div class="box-introduce d-flex align-items-center flex-column justify-content-end justify-content-lg-center">
         <div class="col-12">
-            <h2 class="box-introduce-title">
+            <h2 class="box-introduce-title animate__animated animate__fadeIn">
                 <?= WEB_NAME ?>
             </h2>
             <div id="introduce-desc" class="box-introduce-desc mt-3 col-lg-6">
@@ -14,21 +14,6 @@
         <spline-viewer class="robot-3d" url="https://prod.spline.design/cXDqpdK8FiMkdQFp/scene.splinecode"></spline-viewer>
     </div>
 </div>
-
-<style>
-    .box-introduce {
-        height: 400px;
-        position: relative;
-        overflow: hidden;
-    }
-    .robot-3d {
-        height: 2000px;
-        z-index: 999;
-        scale: 0.6;
-        right: -20%;
-        position: absolute;
-    }
-</style>
 
 <div class="container mt-5">
     <div class="d-flex flex-column flex-lg-row gap-4">

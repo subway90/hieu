@@ -29,10 +29,28 @@
     color : var(--bs-light-80);
 }
 
-.box-3d {
-    right: -50%;
+.box-introduce {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.robot-3d {
+    height: 2000px;
+    z-index: 999;
+    scale: 0.6;
+    right: -20%;
+    position: absolute;
 }
 
-.box-3d-object {
-    top: 0;
+@media (max-width:796px) {
+    .box-introduce {
+        height: 50vh;
+    }
+    .robot-3d {
+        top: -18vh;
+        right: -46.5vh;
+        height: 70vh;
+        width: 140vh;
+        scale: 0.46;
+    }
 }
