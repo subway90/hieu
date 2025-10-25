@@ -18,6 +18,11 @@
     width: 12px !important;
 }
 
+.box-introduce {
+    height: 400px;
+    position: relative;
+}
+
 .box-introduce-title {
     font-size: 46px;
     font-weight: 700;
@@ -27,4 +32,12 @@
 
 .box-introduce-desc {
     color : var(--bs-light-80);
+}
+
+.box-3d {
+    right: -50%;
+}
+
+.box-3d-object {
+    top: 0;
 }
