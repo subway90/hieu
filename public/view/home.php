@@ -2,7 +2,7 @@
 
 <div class="container px-lg-0 mt-5">
     <div class="box-introduce d-flex align-items-center">
-        <div class="col-12 animate__animated animate__bounceInLeft">
+        <div class="col-12">
             <h2 class="box-introduce-title">
                 <?= WEB_NAME ?>
             </h2>
@@ -10,9 +10,25 @@
                 <?= WEB_DESCRIPTION ?>
             </div>
         </div>
-        </div>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.86/build/spline-viewer.js"></script>
+        <spline-viewer class="robot-3d" url="https://prod.spline.design/cXDqpdK8FiMkdQFp/scene.splinecode"></spline-viewer>
     </div>
 </div>
+
+<style>
+    .box-introduce {
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+    .robot-3d {
+        height: 2000px;
+        z-index: 999;
+        scale: 0.6;
+        right: -20%;
+        position: absolute;
+    }
+</style>
 
 <div class="container mt-5">
     <div class="d-flex flex-column flex-lg-row gap-4">
