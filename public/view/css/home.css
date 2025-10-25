@@ -42,15 +42,17 @@
     position: absolute;
 }
 
-@media (max-width:796px) {
+@media (max-width:888px) {
     .box-introduce {
-        height: 50vh;
+        height: auto;
+        text-align: center;
     }
     .robot-3d {
-        top: -18vh;
-        right: -46.5vh;
+        display: none;
         height: 70vh;
         width: 140vh;
+        top: -18vh;
+        right: -46.5vh;
         scale: 0.46;
     }
 }
