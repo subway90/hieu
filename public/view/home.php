@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="<?= URL_P_V ?>css/home.css">
 
-<div class="container px-0 mt-5">
+<div class="container px-lg-0 mt-5">
     <div class="box-introduce d-flex align-items-center">
         <div class="col-12 animate__animated animate__bounceInLeft">
             <h2 class="box-introduce-title">
                 <?= WEB_NAME ?>
             </h2>
-            <div id="introduce-desc" class="box-introduce-desc mt-3 w-50">
+            <div id="introduce-desc" class="box-introduce-desc mt-3 col-lg-6">
                 <?= WEB_DESCRIPTION ?>
             </div>
         </div>

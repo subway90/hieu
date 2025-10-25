@@ -22,17 +22,9 @@
 </head>
 
 <body class="">
-
-    <!-- header -->
-    <header class="py-lg-2 py-3 px-lg-4">
-        <div class="container d-flex justify-content-between align-items-center">
-
-        </div>
-    </header>
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg container position-sticky sticky-top bg-box rounded-3 mt-lg-3">
-        <div class="container rounded-3">
+    <nav class="navbar navbar-expand-lg container position-sticky sticky-top px-3 px-lg-0">
+        <div class="container rounded-3 bg-box py-2 mt-lg-3 mt-2">
             <button class="navbar-toggler bg-transparent p-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
