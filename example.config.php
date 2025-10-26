@@ -61,3 +61,9 @@ const MAILER_YOURNAME = '';
 const MAILER_SMTP = 'tls';
 const MAILER_PORT = '587';
 const MAILER_HOST = 'smtp.gmail.com';
+
+// ---[  GOOGLE OAUTH API  ] --- --- --- --- --- --- --- ---
+
+const GOOGLE_CLIENT_ID      = 'client_id_api';
+const GOOGLE_CLIENT_SECRET  = 'client_secret_api';
+const GOOGLE_REDIRECT_URL   = 'https://'.DOMAIN.'/google-login-callback';
