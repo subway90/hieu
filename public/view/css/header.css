@@ -23,3 +23,11 @@
 .nav-link.on {
     color: var(--bs-light);
 }
+
+@media (min-width :1199px) {
+    #group-btn-header {
+        position: absolute;
+        right: 0;
+        margin-right: 0.5rem;
+    }
+}

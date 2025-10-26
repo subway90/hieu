@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css">
 </head>
 
+<?= toast_show() ?>
+
 <body class="">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg container position-sticky sticky-top px-3 px-lg-0">
@@ -52,8 +54,8 @@
                 </ul>
 
 
-                <div class="d-flex align-items-center justify-content-center gap-1">
-                    <a href="/dang-nhap" class="btn btn-sm btn-outline-light rounded-pill">
+                <div id="group-btn-header" class="d-flex align-items-center justify-content-center gap-1">
+                    <a href="/dang-nhap" class="btn btn-sm btn-outline-light rounded-pill <?= $page == 'login' ? 'active' : '' ?>">
                         <small>Đăng nhập</small>
                     </a>
                     <div class="ms-lg-1">

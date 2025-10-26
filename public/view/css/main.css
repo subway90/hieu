@@ -2,6 +2,7 @@ body {
     
     --bs-light : #fefefe;
     --bs-light-80 : #fefefedc;
+    --bs-light-60 : #fefefea5;
     --bs-light-50 : #fefefe7b;
 
     --bs-light-shadow : #f3f3f3;
@@ -22,6 +23,7 @@ body {
     --bs-g-h1-secondary : #ff00c3;
 
     background-color: var(--bs-primary);
+    color: var(--bs-light-80);
 }
 
 body.light {
@@ -53,6 +55,9 @@ body.light {
 }
 
 .bg-box.bg-box-btn {
+    display: inline-flex;
+    justify-content: center;
+    gap: 0.5rem;
     transition: calc(0.5s);
 }
 
@@ -63,18 +68,23 @@ body.light {
 }
 
 .btn-outline-light {
-    color: var(--bs-light) !important;
-    background-color: var(--bs-primary) !important;
-    border-color: var(--bs-light) !important;
+    color: var(--bs-light-50) !important;
+    background-color: transparent;
+    border-color: var(--bs-light-50) !important;
 }
 
-.btn-outline-light:hover {
-    color: var(--bs-primary) !important;
-    background-color: var(--bs-light) !important;
+.btn-outline-light:hover, .btn-outline-light.active {
+    color: var(--bs-light) !important;
+    border-color: var(--bs-light-80) !important;
+    background-color: transparent;
 }
 
 .text-light {
     color: var(--bs-light) !important;
+}
+
+.text-light-50 {
+    color: var(--bs-light-50) !important;
 }
 
 .text-blue {
@@ -111,4 +121,47 @@ body.light {
 
 .shadow-light {
     box-shadow: 0 0 1px 2px var(--bs-light-50);
+}
+
+.input {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.input label {
+    font-size: 14px;
+    margin-left: 4px;
+    color : var(--bs-light-50)
+}
+
+.input input {
+    outline: none;
+    background-color: var(--bs-primary);
+    border : 1px solid var(--bs-primary);
+    border-radius: 16px;
+    font-size: 14px;
+    color: var(--bs-light-80);
+    padding: 10px 20px;
+    box-shadow: 4px 4px 10px var(--bs-shadow-box-dark) inset, -4px -4px 10px var(--bs-shadow-box-light) inset;
+}
+
+.input-btn {
+    outline: none;
+    text-decoration: none;
+    width: 100%;
+    font-size: 14px;
+    background-color: var(--bs-primary);
+    color: var(--bs-light-50);
+    border: 1px solid var(--bs-light-50);
+    border-radius: 16px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.input-btn:hover {
+    color: var(--bs-light-80);
+    border-color: var(--bs-light-80);
+    transition: 0.3s;
 }

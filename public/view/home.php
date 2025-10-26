@@ -1,17 +1,42 @@
 <link rel="stylesheet" href="<?= URL_P_V ?>css/home.css">
 
 <div class="container px-lg-0 mt-5">
-    <div class="box-introduce d-flex align-items-center flex-column justify-content-end justify-content-lg-center">
-        <div class="col-12">
-            <h2 class="box-introduce-title animate__animated animate__fadeIn">
+    <div class="box-introduce row align-items-center justify-content-center">
+        <div class="col-12 col-lg-6">
+            <h2 class="col-12 box-introduce-title animate__animated animate__jackInTheBox">
                 <?= WEB_NAME ?>
             </h2>
-            <div id="introduce-desc" class="box-introduce-desc mt-3 col-lg-6">
+            <div id="introduce-desc" class="box-introduce-desc mt-3 col-lg-9">
                 <?= WEB_DESCRIPTION ?>
             </div>
         </div>
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.86/build/spline-viewer.js"></script>
-        <spline-viewer class="robot-3d" url="https://prod.spline.design/cXDqpdK8FiMkdQFp/scene.splinecode"></spline-viewer>
+        <div class="col-12 col-lg-6">
+            <div class="box-social">
+                <a href="https://github.com/subway90" target="_blank" class="card-social">
+                    <i class="bi bi-github"></i>
+                    <span>@subway90</span>
+                </a>
+                <a href="https://linkedin.com/in/subway90" target="_blank" class="card-social">
+                    <i class="bi bi-linkedin"></i>
+                    <span>@subway90</span>
+                </a>
+                <a href="https://instagram/hieu.name.vn" target="_blank" class="card-social">
+                    <i class="bi bi-instagram"></i>
+                    <span>/hieu.name.vn</span>
+                </a>
+                <a href="https://fb.com/hieu.name.vn" target="_blank" class="card-social">
+                    <i class="bi bi-facebook"></i>
+                    <span>/hieu.name.vn</span>
+                </a>
+                <a href="https://youtube.com/@subway90" target="_blank" class="card-social">
+                    <i class="bi bi-telephone-fill"></i>
+                    <span>0965 279 041</span>
+                </a>
+                <div class="text-social">
+                    My contact :
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
