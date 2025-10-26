@@ -1,9 +1,5 @@
 <?php
 
-// test_array($_SESSION);
-
-// Kiểm tra đã đăng nhập chưa
-// if(is_login()) route('trang-chu');
 
 // model
 model('public','account');
@@ -13,6 +9,9 @@ $username = '';
 
 // Nhấn submit đăng nhập
 if(isset($_POST['login'])) {
+    
+    // Kiểm tra đã đăng nhập chưa
+    if(is_login()) route(DEFAULT_USER_CASE);
 
     // lấy thông tin từ form
     $username = $_POST['username'];
@@ -27,11 +26,35 @@ if(isset($_POST['login'])) {
         // Chuyển hướng trang thanh toán (nếu có)
         if($return_checkout_page) route('thanh-toan');
         // Chuyển hướng theo role
-        if(auth('name_role') == 'admin') route('admin');
-        route('trang-chu');
+        if(auth('name_role') == 'admin') route(DEFAULT_ADMIN_CASE);
+        route(DEFAULT_USER_CASE);
     }
             
 }
+
+// Nhấn submit đăng xuất
+if(isset($_POST['logout'])) {
+    if(is_login()) {
+        // huỷ session USER
+        unset($_SESSION['user']);
+        // huỷ cookie nếu có
+        setcookie('token_remember',$token_remember, [
+            'expires' => time() - 1,
+            'path' => '/',
+            'domain' => DOMAIN,
+            'secure' => true,
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
+        // thông báo
+        toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng xuất thành công');
+        // quay đến trang đăng nhập
+        route(DEFAULT_USER_CASE);
+    }else route('dang-nhap');
+}
+
+// Kiểm tra đã đăng nhập chưa
+if(is_login()) route(DEFAULT_USER_CASE);
 
 $data = [
     'username' => $username,

@@ -55,9 +55,18 @@
 
 
                 <div id="group-btn-header" class="d-flex align-items-center justify-content-center gap-1">
+
+                    <?php if(is_login()) : ?>
+                    <a href="/thong-tin-ca-nhan" class="btn btn-sm btn-outline-light rounded-pill p-1 pe-2 d-flex align-items-center gap-1 <?= $page == 'profile' ? 'active' : '' ?>">
+                        <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= DEFAULT_AVATAR_MALE ?>" alt="avatar user">
+                        <small><?= auth('full_name') ?></small>
+                    </a>
+                    <?php else : ?>
                     <a href="/dang-nhap" class="btn btn-sm btn-outline-light rounded-pill <?= $page == 'login' ? 'active' : '' ?>">
                         <small>Đăng nhập</small>
                     </a>
+                    <?php endif ?>
+
                     <div class="ms-lg-1">
                         <button type="button" id="mode-light" class="btn btn-sm btn-outline-light rounded-circle">
                             <i class=""></i>
