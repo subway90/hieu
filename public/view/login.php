@@ -32,7 +32,7 @@
         <div class="small text-light-50 mt-5 mb-3">
                 hoặc tiếp tục với
             </div>
-        <a href="/" class="bg-box bg-box-btn p-3 col-12 col-md-6 col-lg-4 rounded-4 small text-light-50">
+        <a href="/dang-nhap/google" class="bg-box bg-box-btn p-3 col-12 col-md-6 col-lg-4 rounded-4 small text-light-50">
             <i class="bi bi-google">
             </i>
             Tài khoản Google

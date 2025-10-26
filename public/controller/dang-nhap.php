@@ -32,6 +32,23 @@ if(isset($_POST['login'])) {
             
 }
 
+// Nhấn submit đăng nhập với Google
+if(get_action_uri(1) === 'google') {
+    require_once './vendor/autoload.php';
+    // Cấu hình Google Client
+    $client = new Google_Client();
+    $client->setClientId(GOOGLE_CLIENT_ID);
+    $client->setClientSecret(GOOGLE_CLIENT_SECRET);
+    $client->setRedirectUri(GOOGLE_REDIRECT_URL);
+    $client->addScope('email');
+    $client->addScope('profile');
+
+    // Tạo url
+    $authUrl = $client->createAuthUrl();
+    header('Location: ' . filter_var($authUrl, FILTER_SANITIZE_URL));
+    exit();
+}
+
 // Nhấn submit đăng xuất
 if(isset($_POST['logout'])) {
     if(is_login()) {

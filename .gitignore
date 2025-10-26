@@ -8,3 +8,5 @@
 config.php
 rule.txt
 public/controller/deploy-src.php
+
+/vendor

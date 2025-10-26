@@ -1,5 +1,7 @@
 <?php
 
+// test_array($_SESSION);
+
 $data = [
 
 ];

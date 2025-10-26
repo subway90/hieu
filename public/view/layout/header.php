@@ -58,7 +58,7 @@
 
                     <?php if(is_login()) : ?>
                     <a href="/thong-tin-ca-nhan" class="btn btn-sm btn-outline-light rounded-pill p-1 pe-2 d-flex align-items-center gap-1 <?= $page == 'profile' ? 'active' : '' ?>">
-                        <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= DEFAULT_AVATAR_MALE ?>" alt="avatar user">
+                        <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= (auth('google_avatar') ?? DEFAULT_AVATAR_MALE) ?>" alt="avatar user">
                         <small><?= auth('full_name') ?></small>
                     </a>
                     <?php else : ?>

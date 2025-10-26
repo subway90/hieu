@@ -34,18 +34,14 @@ function check_valid_username($input) {
  * @param string $username Username
  * @param string $password Mật khẩu
  * @param int $id_role ID role
- * @param string $address Địa chỉ giao hàng
+ * @param string | null $google_avatar URL avatar dành cho người đăng nhập bằng tài khoản google
  * @return int
  */
-function create_user($token_remember,$full_name,$gender,$email,$username,$password,$id_role,$address) {
+function create_user($token_remember,$full_name,$gender,$email,$username,$password,$id_role,$google_avatar = '') {
     try{
         pdo_execute(
-            'INSERT INTO user (token_remember,full_name,gender,email,username,password,id_role) VALUES (?,?,?,?,?,?,?)'
-            ,$token_remember,$full_name,$gender,$email,$username,md5($password),$id_role
-        );
-        pdo_execute(
-            'INSERT INTO shipping_address (username,name_shipping_address) VALUES(?,?)'
-            ,$username,$address
+            'INSERT INTO user (token_remember,full_name,gender,email,username,password,id_role,google_avatar) VALUES (?,?,?,?,?,?,?,?)'
+            ,$token_remember,$full_name,$gender,$email,$username,md5($password),$id_role,$google_avatar
         );
     }catch(PDOException $e) {
         die(_s_me_error.$e->getMessage()._e_me_error);
@@ -111,4 +107,82 @@ function login($username,$password) {
         else toast_create('danger','Mật khẩu không chính xác !');
     }
     return false;
+}
+
+
+/**
+ * Hàm dùng để đăng nhập với tài khoản google
+ * @param string $google_id ID tài khoản google
+ * @param string $google_name Tên tài khoản google
+ * @param string $google_email Email google
+ * @param string $google_avatar URL avatar google
+ * @return void Chuyển đổi route và thông báo toast
+ */
+function login_with_google($google_id,$google_name,$google_avatar,$google_email) {
+    // Thực hiện lấy thông tin trên database
+    $get_user = get_one_user_by_username($google_id);
+    // Kiểm tra user có tồn tại
+    if(!$get_user) {
+        // tạo session
+        $_SESSION['user'] = [
+            'username' => $google_id,
+            'password' => create_token(10),
+            'token_remember' => create_uuid(),
+            'id_role' => 2,
+            'email' => $google_email,
+            'full_name' => $google_name,
+            'gender' => 1,
+            'google_avatar' => $google_avatar,
+            
+        ];
+
+        // tạo cookie remember
+        setcookie('token_remember',$_SESSION['user']['token_remember'], [
+            'expires' => time() + (86400 * 365), // thời hạn cookie
+            'path' => '/', // Cookie có thể truy cập từ mọi đường dẫn
+            'domain' => DOMAIN, // Thay đổi theo domain của bạn
+            'secure' => true, // Chỉ gửi cookie qua HTTPS
+            'httponly' => true, // Tránh getCookie
+            'samesite' => 'Strict' // Bảo vệ khỏi các tấn công CSRF
+        ]);
+
+        // lưu db
+        create_user($_SESSION['user']['token_remember'],$google_name,1,$google_email,$_SESSION['user']['username'],$_SESSION['user']['password'],2,$_SESSION['user']['google_avatar']);
+
+        toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng nhập thành công');
+        route('thong-tin-ca-nhan');
+
+        }
+    else {
+        // Đúng username
+        if($google_id === $get_user['username']) {
+            // lưu thông tin đăng nhập vào session
+            $_SESSION['user'] = $get_user;
+            // Tạo token remember
+            $token_remember = create_uuid();
+            // Lưu token remember vào database
+            pdo_execute(
+                'UPDATE user SET token_remember = ? WHERE username = ?',
+                $token_remember,$_SESSION['user']['username']
+            );
+            // Lưu token remember vào cookie (thời hạn là 1 tháng)
+            setcookie('token_remember',$token_remember, [
+                'expires' => time() + (86400 * 365), // thời hạn cookie
+                'path' => '/', // Cookie có thể truy cập từ mọi đường dẫn
+                'domain' => DOMAIN, // Thay đổi theo domain của bạn
+                'secure' => true, // Chỉ gửi cookie qua HTTPS
+                'httponly' => true, // Tránh getCookie
+                'samesite' => 'Strict' // Bảo vệ khỏi các tấn công CSRF
+            ]);
+            // Thông báo toast
+            toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng nhập thành công');
+            route('trang-chu');
+
+        }
+        // Đăng nhập thất bại
+        else {
+            toast_create('danger','Đăng nhập tài khoản Google thất bại. Xin vui lòng thử lại !');
+            route('dang-nhap');
+        }
+    }
 }
