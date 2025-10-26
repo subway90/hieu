@@ -77,9 +77,9 @@ function view($type_of_role, $page, $title, $data, $off_layout = null)
  * @return void
  */
 function model($type, $name_model){
-    if($type != 'admin' && $type != 'user') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
-    if(file_exists('models/' . $type . '/' . $name_model . '.php')) require_once 'models/' . $type . '/' . $name_model . '.php';
-    else  die(_s_me_error . 'Model <strong> ' . $name_model . '</strong> mà bạn khai báo không được tìm thấy tại :<br> <strong>path : models/' . $type . '/' . $name_model . 'php</strong>' . _e_me_error);
+    if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
+    if(file_exists($type . '/model/' . $name_model . '.php')) require_once  $type . '/model/' . $name_model . '.php';
+    else  die(_s_me_error . 'Model <strong> ' . $name_model . '</strong> mà bạn khai báo không được tìm thấy tại :<br> <strong>path : ' . $type . '/model/' . $name_model . '.php</strong>' . _e_me_error);
 }
 
 
@@ -103,7 +103,7 @@ function view_error($code){
  * @param string $layout Tên layout
  */
 function layout($type, $layout, $data = null) {
-    if($type != 'admin' && $type != 'user') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
+    if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
     if(file_exists('views/' . $type . '/layout' . '/' . $layout . '.php')) {
         if(!empty($data)) extract($data);
         require 'views/' . $type . '/layout' . '/' . $layout . '.php';
@@ -254,9 +254,8 @@ function route($case = null){
  * @param string $type Loại background [danger,warning,success]
  * @param string $message Tin nhắn cần thông báo
  */
-function toast_create($type, $message){
-    $_SESSION['toast'][0] = $type;
-    $_SESSION['toast'][1] = $message;
+function toast_create($type,$message){
+    $_SESSION['toast'][0] = $message;
 }
 
 /**
@@ -265,8 +264,7 @@ function toast_create($type, $message){
  */
 function toast_show(){
     if (!empty($_SESSION['toast'])) {
-        $type = $_SESSION['toast'][0];
-        $message = $_SESSION['toast'][1];
+        $message = $_SESSION['toast'][0];
         $duration = TIME_SHOW_TOAST;
         $time = TIME_SHOW_TOAST/1000;
         echo 
@@ -293,23 +291,39 @@ function toast_show(){
                 opacity: 0; /* Bắt đầu với độ mờ 0 */
                 transform: translateX(100%); /* Bắt đầu từ bên phải */
                 transition: opacity 0.5s, transform 0.5s; /* Thay đổi khi xuất hiện */
+                background-color : var(--bs-primary) !important;
+                color : var(--bs-primary-80) !important;
+            }
+            .toast-header {
+                background-color : var(--bs-primary) !important;
+                color : var(--bs-primary-80) !important;
             }
             .toast.show {
                 opacity: 1; /* Độ mờ 1 khi hiển thị */
                 transform: translateX(0); /* Vị trí trở về ban đầu */
             }
+            .btn-toast-close {
+                border: none;
+                font-size: 20px;
+                color: var(--bs-light-50);
+                background-color : transparent;
+                padding: 0;
+            }
+
         </style>
         <!-- Content toast -->
         <div class="toast show animate__animated animate__fadeInRight" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header justify-content-center gap-1 small">
-                <i class="bi bi-bell-fill"></i>
-                <strong class="me-auto">Hệ thống</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                <i class="bi bi-bell"></i>
+                <strong class="me-auto fw-light">Hệ thống</strong>
+                <button type="button" class="btn-toast-close" data-bs-dismiss="toast" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
             </div>
             <div class="toast-body">
                 <span>{$message}</span>
             </div>
-            <div class="bg-{$type} line-bar"></div>
+            <div class="bg-light line-bar"></div>
         </div>
         <script>
             function closeToast() {
