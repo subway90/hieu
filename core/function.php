@@ -47,7 +47,7 @@ function is_login(){
 function auth($param){
     if(empty($_SESSION['user'])) return false;
     elseif($param == 'all') return $_SESSION['user'];
-    elseif(!isset($_SESSION['user'][$param])) die(_s_me_error . 'Không tồn tại param ' . $param . ' trong session user' . _e_me_error);
+    elseif(!isset($_SESSION['user'][$param])) return null;
     else return $_SESSION['user'][$param];
 }
 
