@@ -9,6 +9,7 @@
 }
 
 .avatar-profile {
+    background-color: var(--bs-primary-bold);
     position: absolute;
     top: 50%;
     right: 100%;
