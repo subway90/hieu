@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= URL_P_V ?>css/profile.css?v=1.1">
+<link rel="stylesheet" href="<?= URL_P_V ?>css/profile.css?v=1.2">
 
 <div class="container">
     <div class="row my-4">
@@ -29,19 +29,27 @@
         <div class="col-12 col-lg-9 pe-lg-0 mt-4 mt-lg-0">
             <div class="bg-box rounded-4 d-flex flex-column text-light-50 p-1 pb-4 small">
                 <div class="header-profile">
-                    <img src="<?= DEFAULT_BANNER_PROFILE ?>" alt="" class="banner-profile rounded-4 border-1 border-light">
+                    <img src="<?= DEFAULT_BANNER_PROFILE ?>" alt="" class="banner-profile border-1 border-light">
                     <img src="<?= ((auth('google_avatar')) ?? DEFAULT_AVATAR_MALE) ?>" class="avatar-profile" alt="">
                 </div>
-                <div class="title-profile">
-                    <div class="name">
-                    <?= auth('full_name') ?>
+                <div class="d-flex flex-column flex-lg-row gap-2 align-items-center justify-content-between">
+                    <div class="title-profile">
+                        <div class="name">
+                        <?= auth('full_name') ?>
+                        </div>
+                        <div class="username">
+                            @subway90
+                        </div>
                     </div>
-                    <div class="username">
-                        @username
+                    <div class="action-profile pe-lg-3">
+                        <button class="btn btn-sm btn-outline-light rounded-5 small px-3">
+                            <i class="bi bi-eye small"></i>
+                            <small>Theo dõi</small>
+                        </button>
                     </div>
                 </div>
-                <div class="ps-lg-5 px-2 mt-3">
-                    <div class="text-light mt-2">
+                <div class="body-profile ps-lg-5 px-2 mt-3">
+                    <div class="bio mt-lg-1 text-center text-lg-start">
                         Chào mừng bạn đến với trang cá nhân của mình. Kết bạn nhé !
                     </div>
                     <div class="row gap-2 mt-4">
@@ -71,6 +79,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 text-center text-lg-start mt-3 text-note-version-beta">
+                <i class="bi bi-exclamation-diamond text-warning"></i> Hiện tại là phiên bản thử nghiệm, dữ liệu có thể không chính xác.
             </div>
         </div>
     </div>
