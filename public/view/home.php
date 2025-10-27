@@ -12,29 +12,26 @@
         </div>
         <div class="col-12 col-lg-6">
             <div class="box-social">
-                <a href="https://github.com/subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-5s">
+                <a href="https://github.com/subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-5">
                     <i class="bi bi-github"></i>
                     <span>@subway90</span>
                 </a>
-                <a href="https://linkedin.com/in/subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-4s">
+                <a href="https://linkedin.com/in/subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-4">
                     <i class="bi bi-linkedin"></i>
                     <span>@subway90</span>
                 </a>
-                <a href="https://instagram/hieu.name.vn" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-3s">
+                <a href="https://instagram/hieu.name.vn" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-3">
                     <i class="bi bi-instagram"></i>
                     <span>/hieu.name.vn</span>
                 </a>
-                <a href="https://fb.com/hieu.name.vn" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-2s">
+                <a href="https://fb.com/hieu.name.vn" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-2">
                     <i class="bi bi-facebook"></i>
                     <span>/hieu.name.vn</span>
                 </a>
-                <a href="https://youtube.com/@subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-1s">
-                    <i class="bi bi-telephone-fill"></i>
+                <a href="https://youtube.com/@subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-1">
+                    <i class="bi bi-telephone"></i>
                     <span>0965 279 041</span>
                 </a>
-                <div class="text-social">
-                    My contact :
-                </div>
             </div>
         </div>
     </div>
