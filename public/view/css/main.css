@@ -23,12 +23,20 @@ body {
     --bs-g-h1-secondary : #ff00c3;
 
     background-color: var(--bs-primary);
-    color: var(--bs-light-80);
+    color: var (--bs-light-80);
+}
+
+@media (min-width:1199px) {
+    body {
+        padding-left: 10rem !important; 
+        padding-right: 10rem !important;
+    }
 }
 
 body.light {
     --bs-light : #2c2c2e;
     --bs-light-80 : #2c2c2edc;
+    --bs-light-60 : #2c2c2ea5;
     --bs-light-50 : #2c2c2e7b;
 
     --bs-light-shadow : #2c2c2e2e;
@@ -50,7 +58,7 @@ body.light {
 .bg-box {
     background-color: var(--bs-primary) !important;
     box-shadow: -4px -4px 20px var(--bs-shadow-box-light), 4px 4px 20px var(--bs-shadow-box-dark);
-    color: var(--bs-light-80) !important;
+    color: var(--bs-light-60) !important;
     text-decoration: none;
 }
 
@@ -61,7 +69,7 @@ body.light {
     transition: calc(0.5s);
 }
 
-.bg-box.bg-box-btn:hover {
+.bg-box.bg-box-btn:hover, .bg-box-btn.active {
     transition: calc(0.3s);
     box-shadow: -8px -8px 20px var(--bs-shadow-box-light), 8px 8px 20px var(--bs-shadow-box-dark);
     color: var(--bs-light) !important;

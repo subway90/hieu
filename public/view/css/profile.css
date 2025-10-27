@@ -1,0 +1,47 @@
+.header-profile {
+    position: relative;
+}
+
+.banner-profile {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.avatar-profile {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(130%,40%);
+    border: 4px solid var(--bs-primary);
+    border-radius: 100%;
+    width: 120px;
+}
+
+
+.title-profile {
+    padding: .2rem 10.2rem;
+}
+
+.title-profile .name {
+    font-size: 22px;
+    font-weight: 500;   
+    color: var(--bs-light);
+}
+
+
+@media (max-width:1199px) {
+    .banner-profile {
+        height: 150px;
+    }
+    .avatar-profile {
+        top: 20%;
+        right: 50%;
+        transform: translate(50%,50%);
+    }
+    .title-profile {
+        padding: 0;
+        padding-top: 4rem;
+        text-align: center;
+    }
+}
