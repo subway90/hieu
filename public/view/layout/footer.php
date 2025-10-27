@@ -1,6 +1,6 @@
 <!-- Footer -->
-<footer class="border-0">
-    <div class="mt-5 mb-2 text-center text-light">
+<footer class="container px-lg-0">
+    <div class="mt-5 mb-2 text-center bg-box rounded-4 text-light py-5">
         <div class="container">
             <div class="row">
 
@@ -46,6 +46,8 @@
         <span class="g-h1 small">&copy; Bản quyền thuộc <a target="_blank" href="https://github.com/subway90/hieu"><strong>SUBWAY90</strong></a></span>
     </div>
 </footer>
+
+<div class="footer-led"></div>
 
 <div class="position-fixed end-0 bottom-0 mb-5 me-lg-4">
         <button class="btn btn-lg g-h1" id="scrollButton"><i class="fs-1 bi bi-arrow-up-circle-fill"></i></button>

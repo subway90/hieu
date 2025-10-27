@@ -1,9 +1,19 @@
 
-footer {
+.footer-led {
+    position: absolute;
+    margin-left: -10rem;
+    margin-top: 30px;
+    padding-top: 10px;
+    height: .1px;
+    width: 100%;
     background-color: var(--bs-primary-bold);
-    margin-top: 75px;
-    padding: 20px;
     animation: neon-white-border 2s ease-in-out infinite alternate;
+}
+
+@media (max-width: 1199px) {
+    .footer-led {
+        margin-left: 0;
+    }
 }
 
 @keyframes neon-white-border {
