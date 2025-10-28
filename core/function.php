@@ -71,13 +71,13 @@ function view($type_of_role, $page, $title, $data, $off_layout = null)
 }
 
 /**
- * Load model theo loại [user,admin]
- * @param string $type Loại model [user,admin]
+ * Load model theo loại [public,admin]
+ * @param string $type Loại model [public,admin]
  * @param string $name_model Tên model cần gọi ra
  * @return void
  */
 function model($type, $name_model){
-    if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
+    if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [public,admin] ' . _e_me_error);
     if(file_exists($type . '/model/' . $name_model . '.php')) require_once  $type . '/model/' . $name_model . '.php';
     else  die(_s_me_error . 'Model <strong> ' . $name_model . '</strong> mà bạn khai báo không được tìm thấy tại :<br> <strong>path : ' . $type . '/model/' . $name_model . '.php</strong>' . _e_me_error);
 }
@@ -98,12 +98,12 @@ function view_error($code){
 /**
  * Lồng layout vào trong một view
  * 
- * @param string $type Folder layout [user,admin]
+ * @param string $type Folder layout [public,admin]
  * @param array | null $data Dữ liệu truyền vào layout
  * @param string $layout Tên layout
  */
 function layout($type, $layout, $data = null) {
-    if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
+    if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [public,admin] ' . _e_me_error);
     if(file_exists($type . '/view/layout/' . $layout . '.php')) {
         if(!empty($data)) extract($data);
         if(!isset($title)) $title = '';
