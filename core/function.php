@@ -104,10 +104,11 @@ function view_error($code){
  */
 function layout($type, $layout, $data = null) {
     if($type != 'admin' && $type != 'public') die(_s_me_error . 'Type khai báo <strong>' . $type . '</strong> không phù hợp trong mảng [user,admin] ' . _e_me_error);
-    if(file_exists('views/' . $type . '/layout' . '/' . $layout . '.php')) {
+    if(file_exists($type . '/view/layout/' . $layout . '.php')) {
         if(!empty($data)) extract($data);
-        require 'views/' . $type . '/layout' . '/' . $layout . '.php';
-    }else die(_s_me_error . 'Trang layout <strong>' . $type . '/layout' . '/' . $layout . '.php</strong> mà bạn khai báo không được tìm thấy' . _e_me_error);
+        $page = '';
+        require_once $type . '/view/layout/' . $layout . '.php';
+    }else die(_s_me_error . 'Trang layout <strong>' .$type . '/view/layout/' . $layout . '.php</strong> mà bạn khai báo không được tìm thấy' . _e_me_error);
 }
 
 
