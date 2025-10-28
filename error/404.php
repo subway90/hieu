@@ -1,60 +1,49 @@
 <?php
-    require_once __DIR__ . '/../config.php';
-?>
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="<?= WEB_FAVICON ?>" type="image/x-icon">
-    <title><?= WEB_NAME ?> | 404 Not Found</title>
-    <style>
-        body {
-            background-color :rgba(0, 0, 0, 0.95);
-            color : white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .box{
-            font-family : monospace;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-        }
-        .error {
-            font-size: 20px;
-            font-weight: bold;
-            color : #f37986;
-            border-right: solid 2px;
-            padding : 0 12px 0 0;
-            margin: 12px;
-        }
-        p {
-            font-size: 14px;
-        }
-        a {
-            margin-top: 10px;
-            color : white;
-            text-decoration : none;
-        }
-        a:hover {
-            text-decoration : underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <div class="error">404 Not Found</div>
-        <div class="">
-            <p>Đường dẫn bạn đang truy cập không được tìm thấy.</p>
+// load config
+require_once __DIR__ . '/../config.php';
+
+// data 
+$data = [
+    'title' => '404 Not Found',
+];
+
+
+?>
+<?= layout('public','header',$data) ?>
+
+<link rel="stylesheet" href="<?= URL_P_V ?>css/error.css?v=1.1">
+
+<div class="container px-lg-0">
+    <div style="height: 50vh" class="d-flex flex-column align-items-center justify-content-center">
+        <div class="title-404">
+            404
+        </div>
+        <div class="text-404">
+            Trang không được tìm thấy
+        </div>
+        <div class="mt-5 d-flex gap-3 align-items-center">
+            <a href="javascript:history.go(-1)" class="align-items-center gap-2 btn btn-sm bg-box bg-box-btn rounded-pill px-3 py-2">
+                <i class="my-1 bi bi-arrow-left"></i>
+                <div class="small d-none d-md-block">
+                    Quay lại
+                </div>
+            </a>
+            <a href="javascript:location.reload()" class="align-items-center gap-2 btn btn-sm bg-box bg-box-btn rounded-pill px-3 py-2">
+                <i class="my-1 bi bi-arrow-clockwise"></i>
+                <div class="small d-none d-md-block">
+                    Tải lại
+                </div>
+            </a>
+            <a href="/" class="align-items-center gap-2 btn btn-sm bg-box bg-box-btn rounded-pill px-3 py-2">
+                <i class="my-1 bi bi-house"></i>
+                <div class="small d-none d-md-block">
+                    Trang chủ
+                </div>
+            </a>
         </div>
     </div>
-    <a href="/">Quay lại trang chủ</a>
-</body>
-</html>
+</div>
+
+
+<?= layout('public','footer') ?>

@@ -1,0 +1,7 @@
+.title-404 {
+    font-size: 40px;
+}
+
+.title-404, .text-404 {
+    color: var(--bs-light-50);
+}
