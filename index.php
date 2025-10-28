@@ -27,6 +27,10 @@ if($_case) {
         }
         else require_once 'admin/controller/'.DEFAULT_ADMIN_CASE.'.php'; // Chuyển đến case mặc định
     }
+    // Nếu là @username
+    elseif(preg_match('/^@([a-zA-Z0-9_]+)$/', $_case)) {
+        require_once 'public/controller/username.php';
+    }
     // Trả về action bên user
     else{
         if(file_exists('public/controller/'.$_case.'.php')) require_once 'public/controller/'.$_case.'.php';
