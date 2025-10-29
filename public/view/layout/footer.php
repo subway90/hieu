@@ -59,6 +59,7 @@
 <script src="<?= URL_P_V ?>js/scroll.js"></script>
 <script src="<?= URL_P_V ?>js/paragraph.js"></script>
 <script src="<?= URL_P_V ?>js/light_mode.js"></script>
+<script src="<?= URL_P_V ?>js/navbar_scroll.js"></script>
 <!-- CDN JS Bootstrap 5 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <!-- CDN JQuery -->

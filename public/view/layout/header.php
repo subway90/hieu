@@ -16,8 +16,8 @@
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- CSS Custom -->
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css?v=1.1">
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css?v=1.2">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css?v=1.1">
     <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css">
 </head>
 
@@ -25,12 +25,13 @@
 
 <body class="">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg container position-sticky sticky-top px-3 px-lg-0">
+    <nav id="navbar" class="navbar navbar-expand-lg container px-3 px-lg-0">
         <div class="container rounded-3 bg-box py-2 mt-lg-3 mt-2">
-            <button class="navbar-toggler bg-transparent p-0" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler bg-transparent p-0 collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <i class="bi bi-list text-light fs-1"></i>
+                <i id="navbar-toggler-show" class="bi bi-list text-light fs-1"></i>
+                <i id="navbar-toggler-hide" class="bi bi-x text-light fs-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="position-absolute start-0 ms-3 d-none d-lg-flex">
