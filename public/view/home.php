@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= URL_P_V ?>css/home.css?v=1.1">
+<link rel="stylesheet" href="<?= URL_P_V ?>css/home.css?v=1.2">
 
 <div class="container px-lg-0 mt-5">
     <div class="box-introduce row align-items-center justify-content-center">

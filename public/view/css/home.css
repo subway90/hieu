@@ -72,6 +72,12 @@
     transition: 0.3s linear;
 }
 
+@media (min-width: 1199px) {
+    .box-social {
+        margin-left: -5rem;
+    }
+}
+
 @media (max-width:796px) {
     .box-introduce {
         height: 50vh;
