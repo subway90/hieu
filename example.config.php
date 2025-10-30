@@ -67,3 +67,47 @@ const MAILER_HOST = 'smtp.gmail.com';
 const GOOGLE_CLIENT_ID      = 'client_id_api';
 const GOOGLE_CLIENT_SECRET  = 'client_secret_api';
 const GOOGLE_REDIRECT_URL   = 'https://'.DOMAIN.'/google-login-callback';
+
+
+const ARR_PROVINCE = [
+    "Hà Nội",
+    "Hồ Chí Minh",
+    "Huế",
+    "Đà Nẵng",
+    "Cần Thơ",
+    "Hải Phòng",
+    "Lai Châu",
+    "Điện Biên",
+    "Sơn La",
+    "Lạng Sơn",
+    "Cao Bằng",
+    "Tuyên Quang",
+    "Lào Cai",
+    "Thái Nguyên",
+    "Phú Thọ",
+    "Bắc Ninh",
+    "Hưng Yên",
+    "Ninh Bình",
+    "Quảng Ninh",
+    "Thanh Hóa",
+    "Nghệ An",
+    "Hà Tĩnh",
+    "Quảng Trị",
+    "Quảng Ngãi",
+    "Gia Lai",
+    "Khánh Hòa",
+    "Lâm Đồng",
+    "Đồng Nai",
+    "Tây Ninh",
+    "Vĩnh Long",
+    "Đồng Tháp",
+    "An Giang",
+    "Cà Mau",
+    "Bà Rịa - Vũng Tàu"
+];
+
+const ARR_ICON_TOAST = [
+    'success' => '<i class="bi bi-check-circle text-success"></i>',
+    'failed' => '<i class="bi bi-x-circle text-danger"></i> ',
+    'warning' => '<i class="bi bi-exclamation-triangle text-warning"></i> ',
+];
