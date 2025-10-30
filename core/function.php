@@ -257,7 +257,8 @@ function route($case = null){
  * @param string $message Tin nhắn cần thông báo
  */
 function toast_create($type,$message){
-    $_SESSION['toast'][0] = $message;
+    $_SESSION['toast']['type'] = $type;
+    $_SESSION['toast']['message'] = $message;
 }
 
 /**
@@ -266,7 +267,8 @@ function toast_create($type,$message){
  */
 function toast_show(){
     if (!empty($_SESSION['toast'])) {
-        $message = $_SESSION['toast'][0];
+        $icon = ARR_ICON_TOAST[$_SESSION['toast']['type']];
+        $message = $_SESSION['toast']['message'];
         $duration = TIME_SHOW_TOAST;
         $time = TIME_SHOW_TOAST/1000;
         echo 
@@ -298,7 +300,17 @@ function toast_show(){
             }
             .toast-header {
                 background-color : var(--bs-primary) !important;
-                color : var(--bs-primary-80) !important;
+                color : var(--bs-light-60) !important;
+            }
+            .toast-body {
+                display : flex;
+                align-items : center;
+                gap : .5rem;
+                color : var(--bs-light-50) !important;
+                font-size : 13px;
+            }
+            .toast-body i {
+                font-size : 15px;
             }
             .toast.show {
                 opacity: 1; /* Độ mờ 1 khi hiển thị */
@@ -323,6 +335,7 @@ function toast_show(){
                 </button>
             </div>
             <div class="toast-body">
+                <span>{$icon}</span>
                 <span>{$message}</span>
             </div>
             <div class="bg-light line-bar"></div>
