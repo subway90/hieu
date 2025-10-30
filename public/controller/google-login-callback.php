@@ -13,34 +13,25 @@ $client->setClientSecret(GOOGLE_CLIENT_SECRET);
 $client->setRedirectUri(GOOGLE_REDIRECT_URL);
 
 if (isset($_GET['code'])) {
-    // variable bool
-    $bool_error = false;
-
-    // Nhận mã xác thực từ Google
+    // Tạo mã token
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+
+    // Nếu có mã token
     if(isset($token['access_token']) && $token['access_token']) {
-        // Lấy mã xác thực
+        // Xác thực mã token
         $client->setAccessToken($token['access_token']);
+
         // Lấy thông tin người dùng
         $oauth2 = new Google_Service_Oauth2($client);
         $userInfo = $oauth2->userinfo->get();
 
         // Có data -> đăng nhập
         if($userInfo) login_with_google($userInfo->id,$userInfo->name,$userInfo->picture,$userInfo->email);
-        else $bool_error = true;
     }
-    else $bool_error = true;
-
-
     
-    
-    // error -> báo l
-    if($bool_error) {
-        toast_create('danger','Đăng nhập bằng Google thất bại. Vui lòng thử lại !');
-        route('dang-nhap');
-    }
-
-
+    // Đăng nhập thất bại
+    toast_create('failed','Đăng nhập bằng Google thất bại. Vui lòng thử lại !');
+    route('dang-nhap');
     
 }
 else {
