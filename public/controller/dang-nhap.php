@@ -18,8 +18,8 @@ if(isset($_POST['login'])) {
     $password = $_POST['password'];
 
     // Bắt validate
-    if(!$username) toast_create('danger','Vui lòng nhập username');
-    elseif(!$password) toast_create('danger','Vui lòng nhập mật khẩu');
+    if(!$username) toast_create('failed','Vui lòng nhập username');
+    elseif(!$password) toast_create('failed','Vui lòng nhập mật khẩu');
 
     // Tiến hành đăng nhập
     else if(login($username,$password)) {
@@ -64,7 +64,7 @@ if(isset($_POST['logout'])) {
             'samesite' => 'Strict'
         ]);
         // thông báo
-        toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng xuất thành công');
+        toast_create('success','Đăng xuất thành công');
         // quay đến trang đăng nhập
         route(DEFAULT_USER_CASE);
     }else route('dang-nhap');
