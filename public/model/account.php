@@ -81,7 +81,7 @@ function get_one_user_by_google_id($google_id) {
         JOIN role r
         ON a.id_role = r.id_role
         WHERE a.deleted_at IS NULL
-        AND a.google_id = ?'
+        AND a.account_google_id = ?'
         ,$google_id
     );
 }
@@ -131,7 +131,7 @@ function login($username,$password) {
     if(!$get_user) toast_create('failed','Tài khoản này không tồn tại');
     else {
         // Đúng mật khẩu
-        if(md5($password) == $get_user['password']) {
+        if(md5($password) == $get_user['account_password']) {
             // lưu thông tin đăng nhập vào session
             $_SESSION['user'] = $get_user;
             // tạo token remember
