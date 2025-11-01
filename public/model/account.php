@@ -144,7 +144,7 @@ function login($username,$password) {
             // tạo cookie cho tính năng tự động đăng nhập
             create_cookie_token_remember($token_remember);
             // thông báo toast
-            toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng nhập thành công');
+            toast_create('success','Đăng nhập thành công');
 
             return true;
         }
