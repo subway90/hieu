@@ -62,7 +62,7 @@ function get_one_user_by_username($username) {
         JOIN role r
         ON a.id_role = r.id_role
         WHERE a.deleted_at IS NULL
-        AND a.username = ?'
+        AND a.account_username = ?'
         ,$username
     );
 }
