@@ -8,7 +8,7 @@
  */
 function check_one_exist_in_user_with_field($field,$value) {
     $result = pdo_query_value(
-        'SELECT account_username FROM account WHERE '.$field.' = ? AND deleted_at IS NULL'
+        'SELECT account_id FROM account WHERE '.$field.' = ? AND deleted_at IS NULL'
         ,$value
     );
     if($result) return 1;
@@ -43,7 +43,7 @@ function check_valid_username($input) {
  */
 function create_user($username,$password,$id_role,$email,$full_name,$gender,$google_id = '',$google_avatar = '') {
     pdo_execute(
-        'INSERT INTO account (account_username,account_password,id_role,account_email,account_full_name,account_gender,account_google_id,account_google_avatar) VALUES (?,?,?,?,?,?,?,?)'
+        'INSERT INTO account (account_id,account_password,id_role,account_email,account_full_name,account_gender,account_google_id,account_google_avatar) VALUES (?,?,?,?,?,?,?,?)'
         ,$username,md5($password),$id_role,$email,$full_name,$gender,$google_id,$google_avatar
     );
 }
@@ -62,7 +62,7 @@ function get_one_user_by_username($username) {
         JOIN role r
         ON a.id_role = r.id_role
         WHERE a.deleted_at IS NULL
-        AND a.account_username = ?'
+        AND a.account_id = ?'
         ,$username
     );
 }
@@ -101,7 +101,7 @@ function get_one_user_by_google_id($google_id) {
 function create_cookie_token_remember ($cookie_value) {
     // Lưu database
     pdo_execute(
-        'UPDATE account SET account_token_remember = ? WHERE account_username = ?',
+        'UPDATE account SET account_token_remember = ? WHERE account_id = ?',
         $cookie_value,$_SESSION['user']['username']
     );
 
@@ -138,7 +138,7 @@ function login($username,$password) {
             $token_remember = create_uuid();
             // Lưu token remember vào database
             pdo_execute(
-                'UPDATE account SET account_token_remember = ? WHERE account_username = ?',
+                'UPDATE account SET account_token_remember = ? WHERE account_id = ?',
                 $token_remember,$_SESSION['user']['username']
             );
             // tạo cookie cho tính năng tự động đăng nhập
