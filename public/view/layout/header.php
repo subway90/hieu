@@ -16,7 +16,7 @@
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- CSS Custom -->
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css?v=1.2">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css?v=1.3">
     <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css?v=1.1">
     <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css">
 </head>
@@ -36,8 +36,8 @@
             <div id="group-btn-header" class="d-flex align-items-center justify-content-center gap-1">
                     <?php if(is_login()) : ?>
                     <a href="/thong-tin-ca-nhan" class="btn btn-sm btn-outline-light rounded-pill p-1 pe-2 d-flex align-items-center gap-1 <?= $page == 'profile' ? 'active' : '' ?>">
-                        <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= auth('avatar') ? URL_A.auth('avatar') : auth('google_avatar') ?? DEFAULT_AVATAR_MALE ?>" alt="avatar user">
-                        <small><?= auth('full_name') ?></small>
+                        <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= auth('account_avatar') ? URL_A.auth('account_avatar') : auth('account_google_avatar') ?? DEFAULT_AVATAR_MALE ?>" alt="avatar user">
+                        <small><?= auth('account_full_name') ?></small>
                     </a>
                     <?php else : ?>
                     <a href="/dang-nhap" class="btn btn-sm btn-outline-light rounded-pill <?= $page == 'login' ? 'active' : '' ?>">
