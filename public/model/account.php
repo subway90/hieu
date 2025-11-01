@@ -8,7 +8,7 @@
  */
 function check_one_exist_in_user_with_field($field,$value) {
     $result = pdo_query_value(
-        'SELECT username FROM user WHERE '.$field.' = ? AND deleted_at IS NULL'
+        'SELECT account_username FROM account WHERE '.$field.' = ? AND deleted_at IS NULL'
         ,$value
     );
     if($result) return 1;
@@ -43,7 +43,7 @@ function check_valid_username($input) {
  */
 function create_user($username,$password,$id_role,$email,$full_name,$gender,$google_id = '',$google_avatar = '') {
     pdo_execute(
-        'INSERT INTO user (username,password,id_role,email,full_name,gender,google_id,google_avatar) VALUES (?,?,?,?,?,?,?,?)'
+        'INSERT INTO account (account_username,account_password,id_role,account_email,account_full_name,account_gender,account_google_id,account_google_avatar) VALUES (?,?,?,?,?,?,?,?)'
         ,$username,md5($password),$id_role,$email,$full_name,$gender,$google_id,$google_avatar
     );
 }
@@ -57,12 +57,12 @@ function create_user($username,$password,$id_role,$email,$full_name,$gender,$goo
  */
 function get_one_user_by_username($username) {
     return pdo_query_one(
-        'SELECT u.*, r.name_role
-        FROM user u
+        'SELECT a.*, r.name_role
+        FROM account a
         JOIN role r
-        ON u.id_role = r.id_role
-        WHERE u.deleted_at IS NULL
-        AND u.username = ?'
+        ON a.id_role = r.id_role
+        WHERE a.deleted_at IS NULL
+        AND a.username = ?'
         ,$username
     );
 }
@@ -76,12 +76,12 @@ function get_one_user_by_username($username) {
  */
 function get_one_user_by_google_id($google_id) {
     return pdo_query_one(
-        'SELECT u.*, r.name_role
-        FROM user u
+        'SELECT a.*, r.name_role
+        FROM account a
         JOIN role r
-        ON u.id_role = r.id_role
-        WHERE u.deleted_at IS NULL
-        AND u.google_id = ?'
+        ON a.id_role = r.id_role
+        WHERE a.deleted_at IS NULL
+        AND a.google_id = ?'
         ,$google_id
     );
 }
@@ -101,7 +101,7 @@ function get_one_user_by_google_id($google_id) {
 function create_cookie_token_remember ($cookie_value) {
     // Lưu database
     pdo_execute(
-        'UPDATE user SET token_remember = ? WHERE username = ?',
+        'UPDATE account SET account_token_remember = ? WHERE account_username = ?',
         $cookie_value,$_SESSION['user']['username']
     );
 
@@ -138,7 +138,7 @@ function login($username,$password) {
             $token_remember = create_uuid();
             // Lưu token remember vào database
             pdo_execute(
-                'UPDATE user SET token_remember = ? WHERE username = ?',
+                'UPDATE account SET account_token_remember = ? WHERE account_username = ?',
                 $token_remember,$_SESSION['user']['username']
             );
             // tạo cookie cho tính năng tự động đăng nhập
