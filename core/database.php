@@ -63,6 +63,7 @@ function pdo_query($sql)
     }
 }
 
+
 /**
  * Hàm dùng để SELECT trả về 1 dòng
  * @return array
@@ -83,6 +84,7 @@ function pdo_query_one($sql)
         unset($conn);
     }
 }
+
 
 /**
  * Hàm dùng để SELECT trả về giá trị
@@ -119,6 +121,7 @@ function delete_one($table_name,$id_record) {
     );
 }
 
+
 /**
  * Hàm này dùng để khôi phục xoá mềm một record của một bảng
  * @param mixed $table_name Tên bảng cần khôi phục
@@ -132,159 +135,53 @@ function restore_one($table_name,$id_record) {
     );
 }
 
+
 /**
- * Kiểm tra một bảng có tồn tại hay không
+ * Kiểm tra một record có tồn tại hay không
  * 
  * Lưu ý: chỉ kiểm tra ở trạng thái hoạt động, tức chưa xoá mềm
  * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $id_record ID cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
+ * @param string $record_id ID cần kiểm tra
+ * @param bool | null $in_trash Kiểm tra chỉ các record đã xoá mềm
+ * @return mixed Trả về ID record nếu có tồn tại, trả về false nếu không tồn tại
  */
-function check_exist_one($table_name,$id_record) {
+function check_exist_one_by_id($table_name,$record_id,$in_trash = false) {
+    // in trash
+    $in_trash_query = '';
+    if($in_trash) $in_trash_query = 'AND deleted_at';
+    
+    // query
     if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE id_'.$table_name.' = ? AND deleted_at IS NULL',
-        $id_record
+        'SELECT '.$table_name.'_id FROM '.$table_name.' WHERE '.$table_name.'_id = ? '.$in_trash_query,
+        $record_id
     )) return true;
     return false;
 }
 
-/**
- * Kiểm tra một bảng đã xoá mềm có tồn tại hay không
- * 
- * Lưu ý: chỉ kiểm tra ở trạng thái đã được xoá mềm
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $id_record ID cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_in_trash($table_name,$id_record) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE id_'.$table_name.' = ? AND deleted_at'
-        ,$id_record
-    )) return true;
-    return false;
-}
 
 /**
- * Kiểm tra một record có tồn tại trong bảng hay không, bao gồm cả xoá mềm
- * 
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $id_record ID cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_with_trash($table_name,$id_record) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE id_'.$table_name.' = ?',
-        $id_record)) return true;
-    return false;
-}
-
-/**
- * Kiểm tra một tên trong bảng có tồn tại hay không
+ * Kiểm tra một record có tồn tại hay không theo tên cột tuỳ biến
  * 
  * Lưu ý: chỉ kiểm tra ở trạng thái hoạt động, tức chưa xoá mềm
  * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $name_record Tên cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
+ * @param string $record_name Tên cột cần kiểm tra
+ * @param string $record_value Giá trị cần kiểm tra
+ * @param bool | null $in_trash Kiểm tra chỉ các record đã xoá mềm
+ * @param int | null $except_id ID ngoại trừ
+ * @return string|false Trả về ID record nếu có tồn tại, trả về false nếu không tồn tại
  */
-function check_exist_one_by_name($table_name,$name_record) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE name_'.$table_name.' = ? AND deleted_at IS NULL',
-        $name_record
-    )) return true;
-    return false;
-}
+function check_exist_one_by_custom($table_name,$record_name,$record_value,$in_trash = false, $except_id = null) {
+    // except id
+    $except_id_query = '';
+    if($except_id) $except_id_query = 'AND '.$table_name.'_id != '.$except_id;
 
-/**
- * Kiểm tra một tên trong bảng có tồn tại hay không, ngoại trừ id_record
- * 
- * Lưu ý: chỉ kiểm tra ở trạng thái hoạt động, tức chưa xoá mềm
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $name_record Tên cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_by_name_except_id($table_name,$name_record,$id_record) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE name_'.$table_name.' = ? AND id_'.$table_name.' != '.$id_record.' AND deleted_at IS NULL',
-        $name_record
-    )) return true;
-    return false;
-}
-
-/**
- * Kiểm tra một tên trong bảng có tồn tại hay không trong danh sách xoá
- * 
- * Lưu ý: chỉ kiểm tra ở trạng thái đã xoá mềm
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $name_record Tên cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_by_name_in_trash($table_name,$name_record) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE name_'.$table_name.' = ? AND deleted_at',
-        $name_record
-    )) return true;
-    return false;
-}
-
-/**
- * Kiểm tra một record có tồn tại trong bảng bởi slug khi chưa xoá mềm
- * 
- * Lưu ý: chỉ kiểm tra ở trạng thái hoạt động, tức chưa xoá mềm
- * 
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $slug Đường dẫn cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_by_slug($table_name,$slug) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE slug_'.$table_name.' = ? AND deleted_at IS NULL',
-        $slug
-    )) return true;
-    return false;
-}
-
-/**
- * Kiểm tra một record có tồn tại trong bảng bởi slug khi đã xoá mềm
- * 
- * Lưu ý: chỉ kiểm tra ở trạng thái xoá mềm
- * 
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $slug Đường dẫn cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_by_slug_in_trash($table_name,$slug) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE slug_'.$table_name.' = ?',
-        $slug
-    )) return true;
-    return false;
-}
-
-/**
- * Kiểm tra một record có tồn tại trong bảng bởi slug bao gồm cả xoá mềm
- * 
- * 
- * @param mixed $table_name Tên bảng cần kiểm tra
- * @param mixed $slug Đường dẫn cần kiểm tra
- * @return bool Trả về true nếu có tồn tại, trả về false nếu không tồn tại
- */
-function check_exist_one_by_slug_with_trash($table_name,$slug) {
-    if(pdo_query_value(
-        'SELECT id_'.$table_name.' FROM '.$table_name.' WHERE slug_'.$table_name.' = ?',
-        $slug
-    )) return true;
-    return false;
-}
-
-/**
- * Thực hiện xoá vĩnh viễn một record của một bảng
- * @param mixed $table_name Tên bảng cần xoá cứng
- * @param mixed $id_record ID cần xoá cứng
- * @return void
- */
-function delete_force_one($table_name,$id_record) {
-    pdo_execute(
-        'DELETE FROM '.$table_name.' WHERE id_'.$table_name.' = ?',
-        $id_record
+    // in trash
+    $in_trash_query = '';
+    if($in_trash) $in_trash_query = 'AND deleted_at';
+    
+    // query
+    return pdo_query_value(
+        'SELECT '.$table_name.'_id FROM '.$table_name.' WHERE '.$record_name.' = ? '.$in_trash_query.$except_id_query,
+        $record_value
     );
 }
