@@ -16,9 +16,9 @@
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- CSS Custom -->
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css?v=1.3">
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css?v=1.1">
-    <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/main.css?v=1.4">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/header.css?v=1.2">
+    <link rel="stylesheet" href="<?= URL_P_V ?>css/footer.css?v=1.1">
 </head>
 
 <?= toast_show() ?>
@@ -34,31 +34,33 @@
                 <i id="navbar-toggler-hide" class="bi bi-x text-light fs-1"></i>
             </button>
             <div id="group-btn-header" class="d-flex align-items-center justify-content-center gap-1">
-                    <?php if(is_login()) : ?>
-                    <a href="/thong-tin-ca-nhan" class="btn btn-sm btn-outline-light rounded-pill p-1 pe-2 d-flex align-items-center gap-1 <?= $page == 'profile' ? 'active' : '' ?>">
-                        <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= auth('account_avatar') ? URL_A.auth('account_avatar') : auth('account_google_avatar') ?? DEFAULT_AVATAR_MALE ?>" alt="avatar user">
-                        <small><?= auth('account_full_name') ?></small>
-                    </a>
-                    <?php else : ?>
-                    <a href="/dang-nhap" class="btn btn-sm btn-outline-light rounded-pill <?= $page == 'login' ? 'active' : '' ?>">
-                        <small>Đăng nhập</small>
-                    </a>
-                    <?php endif ?>
+                <?php if(is_login()) : ?>
+                <a href="/thong-tin-ca-nhan" class="btn btn-sm btn-outline-light rounded-pill p-1 pe-2 d-flex align-items-center gap-1 <?= $page == 'profile' ? 'active' : '' ?>">
+                    <img width="22" class="rounded-circle bg-light bg-opacity-75" src="<?= auth('account_avatar') ? URL_A.auth('account_avatar') : auth('account_google_avatar') ?? DEFAULT_AVATAR_MALE ?>" alt="avatar user">
+                    <small><?= auth('account_full_name') ?></small>
+                </a>
+                <?php else : ?>
+                <a href="/dang-nhap" class="btn btn-sm btn-outline-light rounded-pill <?= $page == 'login' ? 'active' : '' ?>">
+                    <small>Đăng nhập</small>
+                </a>
+                <?php endif ?>
 
-                    <div class="ms-lg-1">
-                        <button type="button" id="mode-light" class="btn btn-sm btn-outline-light rounded-circle">
-                            <i class=""></i>
-                        </button>
-                    </div>
+                <div class="ms-lg-1">
+                    <button type="button" id="mode-light" class="btn btn-sm btn-outline-light rounded-circle">
+                        <i class=""></i>
+                    </button>
+                </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="position-absolute start-0 ms-3 d-none d-lg-flex">
-                    <img id="logo-header" src="<?= WEB_LOGO ?>" alt="logo">
-                    <div class="ms-2">
-                        <span class="g-h1 fs-6">hieu.name.vn</span>
-                        <div class="text-light small">Trang website cá nhân</div>
+                <a href="/" class="position-absolute start-0 ms-2 d-none d-lg-flex align-items-center text-decoration-none" title="Hiếu Website - Nhấn để về trang chủ">
+                    <img id="logo-header" src="<?= WEB_LOGO ?>" class="col-1" alt="logo">
+                    <div class="ms-1">
+                        <span class="text-light-80 fs-6">Hiếu Website</span>
+                        <div class="text-light-50 small">
+                            <small>Trang website cá nhân</small>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <ul class="navbar-nav align-items-center mx-auto mb-2 mb-lg-0 gap-2 mt-3 mt-lg-0">
 
                     <li class="nav-item">

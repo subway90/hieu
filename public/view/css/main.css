@@ -80,6 +80,11 @@ body.light {
     color: var(--bs-light-50) !important;
     background-color: transparent;
     border-color: var(--bs-light-50) !important;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 50rem;
+    text-wrap: nowrap;
 }
 
 .btn-outline-light:hover, .btn-outline-light.active {
@@ -90,6 +95,14 @@ body.light {
 
 .text-light {
     color: var(--bs-light) !important;
+}
+
+.text-light-80 {
+    color: var(--bs-light-80) !important;
+}
+
+.text-light-60 {
+    color: var(--bs-light-60) !important;
 }
 
 .text-light-50 {
@@ -145,15 +158,20 @@ body.light {
     color : var(--bs-light-50)
 }
 
-.input input {
+.input input, .input select, .input textarea {
     outline: none;
+    appearance: none;
     background-color: var(--bs-primary);
     border : 1px solid var(--bs-primary);
     border-radius: 16px;
     font-size: 14px;
-    color: var(--bs-light-80);
+    color: var(--bs-light-60);
     padding: 10px 20px;
     box-shadow: 4px 4px 10px var(--bs-shadow-box-dark) inset, -4px -4px 10px var(--bs-shadow-box-light) inset;
+}
+
+.input input:focus, .input select:focus {
+    color: var(--bs-light-80);
 }
 
 .input-btn {
@@ -173,4 +191,14 @@ body.light {
     color: var(--bs-light-80);
     border-color: var(--bs-light-80);
     transition: 0.3s;
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+@media (min-width:1199px) {
+    .w-lg-fit-content {
+        width: fit-content;
+    }
 }

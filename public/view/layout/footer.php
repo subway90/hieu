@@ -1,21 +1,38 @@
 <!-- Footer -->
 <footer class="container px-lg-0">
-    <div class="mt-5 mb-2 text-center bg-box rounded-4 text-light py-5">
+    <div class="mt-5 text-center bg-box rounded-4 text-light py-3">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-4 col-12 d-flex align-items-center">
-                    <a class="w-25" href="/">
-                        <img class="w-100" src="<?= URL_A ?>image/minhhieu_logo.png" alt="">
-                    </a>
-                    <div class="g-h1 ms-3 text-start">
-                        <div class="small"><i class="fas fa-user-circle"></i> <strong>Nguyễn Minh Hiếu</strong></div>
-                        <div class="small"><i class="fas fa-phone-square-alt"></i> <strong>0965 279 041</strong></div>
-                        <div class="small"><i class="fas fa-envelope-square"></i>
-                            <strong>nguyenhieu3105@gmail.com</strong>
+                <div class="col-lg-4 col-12">
+                    <div class=" d-flex align-items-center justify-content-start gap-1">
+                        <a class="text-decoration-none" href="/">
+                            <img id="logo-header" src="<?= URL_A ?>image/minhhieu_logo.png" alt="">
+                        </a>
+                        <div class="text-light-50 text-start text-nowrap">
+                            <div class="d-flex flex-column justify-content-center">
+                                <div class="text-light-80">
+                                    Hiếu Website
+                                </div>
+                                <div class="small text-light-50">
+                                    Trang website cá nhân
+                                </div>
+                            </div>
                         </div>
-                        <div class="small"><i class="fas fa-map-marker-alt"></i> <strong>102 Tân Thới Nhất 01, P.Tân
-                                Thới Nhất, Q.12, TP.Hồ Chí Minh, Việt Nam.</strong></div>
+                    </div>
+                    <div class="d-flex flex-column mt-3 gap-1 text-light-50 ps-lg-2">
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="bi bi-person-circle"></i>
+                            <div class="text-light-60">Nguyễn Minh Hiếu</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="bi bi-envelope"></i>
+                            <div class="text-light-60">nguyenhieu3105@gmail.com</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="bi bi-telephone"></i>
+                            <div class="text-light-60">0965 279 041</div>
+                        </div>
                     </div>
                 </div>
 
@@ -23,27 +40,27 @@
 
                 </div>
 
-                <div class="col-lg-4 col-12 d-flex justify-content-center justify-content-lg-end my-3 my-lg-0">
-                    <a href="https://github.com/subway90" target="_blank">
-                        <i class="bi bi-github fs-3 g-h1 px-1"></i>
+                <div class="col-lg-4 col-12 d-flex justify-content-center justify-content-lg-end my-3 my-lg-0 gap-2">
+                    <a href="https://github.com/subway90" class="fs-5 text-light-60" target="_blank">
+                        <i class="bi bi-github"></i>
                     </a>
-                    <a href="https://fb.com/hieu.name.vn/" target="_blank">
-                        <i class="bi bi-facebook fs-3 g-h1 px-1"></i>
+                    <a href="https://fb.com/hieu.name.vn/" class="fs-5 text-light-60" target="_blank">
+                        <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="https://youtube.com/@subway90" target="_blank">
-                        <i class="bi bi-youtube fs-3 g-h1 px-1"></i>
+                    <a href="https://youtube.com/@subway90" class="fs-5 text-light-60" target="_blank">
+                        <i class="bi bi-youtube"></i>
                     </a>
-                    <a href="https://instagram.com/hieu.name.vn" target="_blank">
-                        <i class="bi bi-instagram fs-3 g-h1 px-1"></i>
+                    <a href="https://instagram.com/hieu.name.vn" class="fs-5 text-light-60" target="_blank">
+                        <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="https://linkedin.com/in/subway90" target="_blank">
-                        <i class="bi bi-linkedin fs-3 g-h1 px-1"></i>
+                    <a href="https://linkedin.com/in/subway90" class="fs-5 text-light-60" target="_blank">
+                        <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
 
             </div>
         </div>
-        <span class="g-h1 small">&copy; Bản quyền thuộc <a target="_blank" href="https://github.com/subway90/hieu"><strong>SUBWAY90</strong></a></span>
+        <span class="g-h1 small">&copy; Bản quyền thuộc <a target="_blank" href="https://github.com/subway90/hieu"><strong>Subway90</strong></a></span>
     </div>
 </footer>
 

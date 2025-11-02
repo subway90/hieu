@@ -1,5 +1,6 @@
 #logo-header {
-    width: 42px;
+    width: 36px;
+    height: 36px;
 }
 
 @media (max-width: 992px) {
@@ -39,6 +40,13 @@
     transform: translate(50%,0%);
     z-index: 9999;
     animation: backdown .8s ease-out;
+}
+
+@media (min-width:1199px) {
+    .navbar-sticky {
+        padding-right: 3rem !important;
+        padding-left: 3rem !important;
+    }
 }
 
 .navbar-sticky .bg-box {
