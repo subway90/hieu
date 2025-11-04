@@ -564,6 +564,18 @@ function auto_login(){
             }
         }
     }
+
+    // update thời gian online
+    update_last_online();
+}
+
+
+/**
+ * Cập nhật thời gian online lần cuối -> tức mới nhất
+ * @return void
+ */
+function update_last_online() {
+    pdo_execute('UPDATE account SET account_last_online = current_timestamp() WHERE account_username = ?',auth('account_username'));
 }
 
 
@@ -710,4 +722,14 @@ function format_timeline($time) {
         return $day.' tháng trước ';
     }
     else return format_time($time,'ngày DD tháng MM lúc hh:mm');
+}
+
+
+/**
+ * Kiểm tra chuỗi
+ * @param mixed $input
+ * @return bool
+ */
+function check_string($input) {
+    return preg_match('/^[\p{L}\p{N}. _-]+$/u', $input) === 1;
 }
