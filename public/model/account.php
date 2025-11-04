@@ -43,7 +43,7 @@ function check_valid_username($input) {
  */
 function create_user($username,$password,$id_role,$email,$full_name,$gender,$google_id = '',$google_avatar = '') {
     pdo_execute(
-        'INSERT INTO account (account_id,account_password,id_role,account_email,account_full_name,account_gender,account_google_id,account_google_avatar) VALUES (?,?,?,?,?,?,?,?)'
+        'INSERT INTO account (account_username,account_password,id_role,account_email,account_full_name,account_gender,account_google_id,account_google_avatar) VALUES (?,?,?,?,?,?,?,?)'
         ,$username,md5($password),$id_role,$email,$full_name,$gender,$google_id,$google_avatar
     );
 }
@@ -62,7 +62,7 @@ function get_one_user_by_username($username) {
         JOIN role r
         ON a.id_role = r.id_role
         WHERE a.deleted_at IS NULL
-        AND a.account_id = ?'
+        AND a.account_username = ?'
         ,$username
     );
 }
@@ -101,7 +101,7 @@ function get_one_user_by_google_id($google_id) {
 function create_cookie_token_remember ($cookie_value) {
     // Lưu database
     pdo_execute(
-        'UPDATE account SET account_token_remember = ? WHERE account_id = ?',
+        'UPDATE account SET account_token_remember = ? WHERE account_username = ?',
         $cookie_value,$_SESSION['user']['username']
     );
 
@@ -134,15 +134,8 @@ function login($username,$password) {
         if(md5($password) == $get_user['account_password']) {
             // lưu thông tin đăng nhập vào session
             $_SESSION['user'] = $get_user;
-            // tạo token remember
-            $token_remember = create_uuid();
-            // Lưu token remember vào database
-            pdo_execute(
-                'UPDATE account SET account_token_remember = ? WHERE account_id = ?',
-                $token_remember,$_SESSION['user']['username']
-            );
             // tạo cookie cho tính năng tự động đăng nhập
-            create_cookie_token_remember($token_remember);
+            create_cookie_token_remember(create_uuid());
             // thông báo toast
             toast_create('success','Đăng nhập thành công');
 
