@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const inputFile = document.getElementById('change_avatar');
+    const inputFileAvatar = document.getElementById('change_avatar');
+    const inputFileBanner = document.getElementById('change_banner');
 
-    inputFile.addEventListener('change', function() {
+    inputFileAvatar.addEventListener('change', function() {
+        this.form.submit();
+    });
+
+    inputFileBanner.addEventListener('change', function() {
         this.form.submit();
     });
 });

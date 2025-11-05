@@ -2,17 +2,14 @@
 
 
 /**
- * Lưu path khi cập nhật ảnh đại diện
- * @param mixed $path_avatar Đường dẫn file của avatar
+ * Cập nhật một param của profile
+ * @param string $param Tên cột cần update, tiền tố đã có sẵn : account_
+ * @param string|int $value Giá trị cần update
  * @return void
  */
-function update_avatar($path_avatar) {
-    // valid login
-    if(!is_login()) exit;
-
-    // query 
+function update_profile($param,$value) {
     pdo_execute(
-        'UPDATE user SET avatar = ? WHERE username = ?'
-        ,$path_avatar,auth('username')
+        'UPDATE account SET account_'.$param.' = ? WHERE account_id = ?',
+        $value,auth('account_id')
     );
 }

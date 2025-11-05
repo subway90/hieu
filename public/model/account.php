@@ -179,7 +179,7 @@ function login_with_google($google_id,$google_name,$google_avatar,$google_email)
         toast_create('success','Đăng nhập thành công');
 
         // chuyển trang
-        route('thong-tin-ca-nhan');
+        route('profile');
 
     }
     // Nếu đã có tài khoản

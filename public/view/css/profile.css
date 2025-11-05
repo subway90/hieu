@@ -1,0 +1,24 @@
+label {
+    font-size: 12.25px;
+    text-wrap: nowrap;
+    min-width: 15%;
+}
+
+input, select, textarea, .group-change-image, .group-change-image .banner {
+    width: 24rem;
+}
+
+@media (max-width:1199px) {
+    input, select, textarea, .group-change-image, .group-change-image .banner {
+        width: 100%;
+    }
+    label {
+        font-size: 14px;
+    }
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--bs-light-50);
+    border-radius: 0.25rem;
+}
