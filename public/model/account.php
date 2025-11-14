@@ -163,10 +163,7 @@ function login_with_google($google_id,$google_name,$google_avatar,$google_email)
 
     // Kiểm tra user có tồn tại, nếu chưa có thì tạo mới
     if(!$get_user) {
-        // tạo cookie cho tính năng tự động đăng nhập
-        create_cookie_token_remember($_SESSION['user']['token_remember']);
-
-        // lưu db
+        // tạo user -> lưu db
         create_user($google_id,create_token(20),2,$google_email,$google_name,1,$google_id,$google_avatar);
 
         // tạo session user
