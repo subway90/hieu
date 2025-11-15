@@ -12,25 +12,25 @@
         </div>
         <div class="col-12 col-lg-6">
             <div class="box-social">
-                <a href="https://github.com/subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-5s">
+                <a href="https://github.com/hieuweb3105" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-5s">
                     <i class="bi bi-github"></i>
-                    <span>@subway90</span>
+                    <span>/hieuweb3105</span>
                 </a>
-                <a href="https://linkedin.com/in/subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-4s">
+                <a href="https://linkedin.com/in/hieuweb3105" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-4s">
                     <i class="bi bi-linkedin"></i>
-                    <span>@subway90</span>
+                    <span>/hieuweb3105</span>
                 </a>
-                <a href="https://instagram/hieu.name.vn" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-3s">
+                <a href="https://instagram.com/hieuweb3105" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-3s">
                     <i class="bi bi-instagram"></i>
-                    <span>/hieu.name.vn</span>
+                    <span>/hieuweb3105</span>
                 </a>
-                <a href="https://fb.com/hieu.name.vn" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-2s">
+                <a href="https://fb.com/hieuweb3105" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-2s">
                     <i class="bi bi-facebook"></i>
-                    <span>/hieu.name.vn</span>
+                    <span>/hieuweb3105</span>
                 </a>
-                <a href="https://youtube.com/@subway90" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-1s">
-                    <i class="bi bi-telephone"></i>
-                    <span>0965 279 041</span>
+                <a href="https://www.youtube.com/@hieuweb3105" target="_blank" class="card-social animate__animated animate__fadeIn animate__delay-1s">
+                    <i class="bi bi-youtube"></i>
+                    <span>@hieuweb3105</span>
                 </a>
             </div>
         </div>

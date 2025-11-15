@@ -41,19 +41,19 @@
                 </div>
 
                 <div class="col-lg-4 col-12 d-flex justify-content-center justify-content-lg-end my-3 my-lg-0 gap-2">
-                    <a href="https://github.com/subway90" class="fs-5 text-light-60" target="_blank">
+                    <a href="https://github.com/hieuweb3105" class="fs-5 text-light-60" target="_blank">
                         <i class="bi bi-github"></i>
                     </a>
-                    <a href="https://fb.com/hieu.name.vn/" class="fs-5 text-light-60" target="_blank">
+                    <a href="https://fb.com/hieuweb3105/" class="fs-5 text-light-60" target="_blank">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="https://youtube.com/@subway90" class="fs-5 text-light-60" target="_blank">
+                    <a href="https://youtube.com/@hieuweb3105" class="fs-5 text-light-60" target="_blank">
                         <i class="bi bi-youtube"></i>
                     </a>
-                    <a href="https://instagram.com/hieu.name.vn" class="fs-5 text-light-60" target="_blank">
+                    <a href="https://instagram.com/hieuweb3105" class="fs-5 text-light-60" target="_blank">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="https://linkedin.com/in/subway90" class="fs-5 text-light-60" target="_blank">
+                    <a href="https://linkedin.com/in/hieuweb3105" class="fs-5 text-light-60" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
